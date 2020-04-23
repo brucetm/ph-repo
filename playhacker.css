@@ -1,1 +1,27 @@
 #will write all the snippet css header
+#Search and Filter Pro: Filters 
+/********SFP form style**********/
+	.top-serch-filter{
+	  flex: 0 0 100%;
+	  margin-top:20px;	
+	}
+	.top-serch-filter form.searchandfilter{
+	  margin-bottom:0px;
+	}
+	.post-type-archive-product #primary #main .page-title{
+		display:none;
+	}
+	.post-type-archive-product #primary #primary{
+		padding-top:0px;
+	}
+	.bb-courses-header .bs-dir-search{
+		display:none;
+	}
+	#bb-courses-directory-form .bb-title{
+		display:none;
+	}
+	.disable-form .select2-container--default .select2-selection--single {
+      background: #c8cbcf;
+		pointer-events: none;
+    }
+    
