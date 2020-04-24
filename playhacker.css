@@ -100,7 +100,7 @@ button.simplefavorite-button {
 	height: 76px;
 }
 i.bookmark {
-	background: url("<?php echo home_url();?>/wp-content/uploads/2020/03/bookmark.png");
+	background: url("/wp-content/uploads/2020/03/bookmark.png");
 	width: 16px;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -108,14 +108,14 @@ i.bookmark {
 }
 i.bookmark:hover,
 i.bookmark.highlight {
-	background: url("<?php echo home_url();?>/wp-content/uploads/2020/03/bookmark-hover.png");
+	background: url("/wp-content/uploads/2020/03/bookmark-hover.png");
 	width: 16px;
 	background-size: cover;
 	background-repeat: no-repeat;
 	height: 18px;
 }
 .simplefavorite-button i.fa-bookmark-icon {
-	background: url("<?php echo home_url();?>/wp-content/uploads/2020/03/bookmark-hover.png");
+	background: url("/wp-content/uploads/2020/03/bookmark-hover.png");
 	width: 16px;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -123,7 +123,7 @@ i.bookmark.highlight {
 	display: inline-block;
 }
 .simplefavorite-button i.fa-bookmark-active {
-	background: url("<?php echo home_url();?>/wp-content/uploads/2020/03/bookmark-active.png");
+	background: url("/wp-content/uploads/2020/03/bookmark-active.png");
 	width: 16px;
 	background-size: cover;
 	background-repeat: no-repeat;
