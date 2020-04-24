@@ -1,4 +1,3 @@
-#Include snippet script here
 /***snippet-Bookmarks button styling***/ 
 jQuery(document).ready(function($){
 				$( "i.bookmark" ).click(function() {
