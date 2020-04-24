@@ -1,6 +1,6 @@
 #will write all the snippet css header 
 #Theme:footer content style snippet
-/***********Custom footer design************/
+/***********Snippet-Custom footer design************/
 
 .footer_section nav li {
 	margin-bottom: 0px!important;
@@ -31,7 +31,7 @@
 	box-shadow: 0 -8px 12px rgba(0, 0, 0, 0.05) !important;
 	z-index: 1;
 }
-#snippet Bookmarks button styling
+/*=======snippet- Bookmarks button styling=======*/
 /* Positioning for most everything: */
 
 button.simplefavorite-button {
@@ -440,3 +440,36 @@ i.bookmark.highlight {
 		color: var(--site-accent-hex) !important;  
 		font-weight: 400;
 	}
+	
+/*=======Snippet-Menu secondary: icon and hover styling========*/
+/**** SEE ALSO: Menu main: highlight current menu section snippet *********/
+
+/*		.category-info .current_page_item > a > img,
+		.category-info .current-page-ancestor > a > img {
+			filter: drop-shadow(var(--site-accent-shadow)) !important;
+		}
+		.category-info .current_page_item > a,
+		.category-info .current-page-ancestor > a {
+			color: var(--site-accent-hex) !important;  
+			font-weight: 400;
+		}
+*/
+
+		/* Hover action for nav icons: */
+		.sec_menu_icon:hover,
+		.sec_menu_icon.active {
+			filter: drop-shadow(var(--site-accent-shadow));
+			animation: wiggle-header 500ms ease-in;
+		}
+
+		/* Nav icon basic styling: */
+		.sec_menu_icon .elementor-icon-box-icon i {
+			/*margin-bottom:0px; */
+			font-size:40px;
+		}
+
+		/* Mobile styling: */
+		@media (max-width: 767px){
+		.sec_menu_icon .elementor-icon-box-icon i {
+			font-size:30px;
+		 }
