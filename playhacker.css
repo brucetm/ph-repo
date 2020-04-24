@@ -25,7 +25,7 @@
 		z-index:1;
 	} 
 #snippet Bookmarks button styling
-	/* Positioning for most everything: */
+			/* Positioning for most everything: */
 			button.simplefavorite-button { 
 				width: 36px !important;
 				height: 36px !important;
@@ -60,11 +60,11 @@
 			}
 			
 			/* Positioning for groups: */
-/* Bookmarks in groups aren't working:			
+             /* Bookmarks in groups aren't working:			
 				.bp-group-fav .simplefavorite-button {
 				margin-top: 10px !important;
 			}
-*/
+			*/
 			/* Useful if using text too: */
 			.simplefavorite-button .fa-bookmark, 
 			.simplefavorite-button .fa-bookmark-o { 
@@ -73,7 +73,7 @@
 				color: #53c900!important;
 			}
 			
-/			.simplefavorite-button i.fa-bookmark::before { 
+			.simplefavorite-button i.fa-bookmark::before { 
 				height: 18px;
 			}
 			
@@ -201,7 +201,7 @@
 				margin-bottom:5px;
 				display:block;
 			}
-/*BRUCE*/
+           /*BRUCE*/
 			.fav-light-box .favlist i{
 				margin-top: 2px;
 				margin-left: 2px;
