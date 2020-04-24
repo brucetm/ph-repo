@@ -473,3 +473,17 @@ i.bookmark.highlight {
 			font-size:30px;
 		 }
 		}
+
+/*=============Snippet-ELementor: social icons hover color============*/
+/*		i.fab.fa-instagram:hover {
+*/		elementor-social-icon-instagram:hover {
+			background-color: magenta !important;			
+		}
+		
+/*		i.fab.fa-pinterest:hover,
+		i.fab.fa-youtube:hover {
+*/		elementor-social-icon-pinterest:hover,
+		elementor-social-icon-youtube:hover {
+			background-color: red !important;
+		}
+
