@@ -1,352 +1,362 @@
-#will write all the snippet css header
-#Theme: footer content style snippet
+#will write all the snippet css header 
+#Theme:footer content style snippet
 /***********Custom footer design************/
-	.footer_section nav li{
-		margin-bottom:0px!important;
+
+.footer_section nav li {
+	margin-bottom: 0px!important;
+}
+.footer_section nav li a:hover {
+	line-height: inherit;
+}
+.bb-footer .area-1 {
+	margin: 0 auto;
+}
+/* Mobile positioning: */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+	.foter-logo-col-left {
+		width: 32%!important;
 	}
-	.footer_section nav li a:hover{
-		line-height:inherit;
+	.foter-logo-col-right {
+		width: 32%!important;
 	}
-	.bb-footer .area-1{
-		margin:0 auto; 
-	 }						
-    
-	/* Mobile positioning: */
-	@media (min-width: 768px) and (max-width:1024px){
-		.foter-logo-col-left{width:32%!important;}
-		.foter-logo-col-right{width:32%!important;}
-		.foter-logo-col-center{width:25%!important;}
+	.foter-logo-col-center {
+		width: 25%!important;
 	}
-	
-	/* Adds a shadow to footer edge: */
-	.bb-footer { 
-		/*filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.25));*/
-		box-shadow: 0 -8px 12px rgba(0,0,0,0.05) !important;
-		z-index:1;
-	} 
+}
+/* Adds a shadow to footer edge: */
+
+.bb-footer {
+	/*filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.25));*/
+	box-shadow: 0 -8px 12px rgba(0, 0, 0, 0.05) !important;
+	z-index: 1;
+}
 #snippet Bookmarks button styling
-			/* Positioning for most everything: */
-			button.simplefavorite-button { 
-				width: 36px !important;
-				height: 36px !important;
-				padding: 0 !important;
-				font-size: 18px !important;
-				color: var(--site-accent-hex) !important;
-				border-color: var(--site-accent-hex) !important;
-				opacity:1!important;
-				/* These are for text label variant: */
-				/*margin-left: 0 !important;*/
-				/*font-family: "Roboto", Arial, sans-serif;*/
-				/*font-style: normal;*/
-				/*font-weight: normal;*/
-				/*font-size: 14px !important;*/
-				/*text-transform: lowercase;*/
-			}
+/* Positioning for most everything: */
 
-			/* Positioning for blog posts: */
-			.entry-content > .simplefavorite-button { 
-				margin-bottom: 22px;
-			}
-			
-			/* Positioning for projects: */
-			.bb-course-banner-inner .bb-course-points { 
-				margin-bottom: -5px; 
-				margin-top: 18px;
-			}	
+button.simplefavorite-button {
+	width: 36px !important;
+	height: 36px !important;
+	padding: 0 !important;
+	font-size: 18px !important;
+	color: var(--site-accent-hex) !important;
+	border-color: var(--site-accent-hex) !important;
+	opacity: 1!important;
+	/* These are for text label variant: */
+	/*margin-left: 0 !important;*/
+	/*font-family: "Roboto", Arial, sans-serif;*/
+	/*font-style: normal;*/
+	/*font-weight: normal;*/
+	/*font-size: 14px !important;*/
+	/*text-transform: lowercase;*/
+}
+/* Positioning for blog posts: */
 
-			/* Positioning for shop: */
-			.woocommerce-page .summary .single_add_to_cart_button { 
-				margin-right: 10px;
-			}
-			
-			/* Positioning for groups: */
-             /* Bookmarks in groups aren't working:			
+.entry-content > .simplefavorite-button {
+	margin-bottom: 22px;
+}
+/* Positioning for projects: */
+
+.bb-course-banner-inner .bb-course-points {
+	margin-bottom: -5px;
+	margin-top: 18px;
+}
+/* Positioning for shop: */
+
+.woocommerce-page .summary .single_add_to_cart_button {
+	margin-right: 10px;
+}
+/* Positioning for groups: */
+
+/* Bookmarks in groups aren't working:			
 				.bp-group-fav .simplefavorite-button {
 				margin-top: 10px !important;
 			}
 			*/
-			/* Useful if using text too: */
-			.simplefavorite-button .fa-bookmark, 
-			.simplefavorite-button .fa-bookmark-o { 
-				/*margin-left: 2px;*/ 
-				/*filter: drop-shadow(0px 2px 2px rgba(0,0,0,0.4));*/
-				color: #53c900!important;
-			}
-			
-			.simplefavorite-button i.fa-bookmark::before { 
-				height: 18px;
-			}
-			
-			/*Positioning for Light Box*/
-			.bookmark-wrap{
-				display: inline-block;
-			}
-			.bookmark-link {
-				display: -webkit-box;
-				display: -ms-flexbox;
-				display: flex;
-				-webkit-box-align: center;
-				-ms-flex-align: center;
-				align-items: center;
-				height: 76px;
-			}
-			i.bookmark{
-				background:url("<?php echo home_url();?>/wp-content/uploads/2020/03/bookmark.png");
-				width:16px;
-				background-size: cover;
-				background-repeat: no-repeat;
-				height: 18px;
-			}
-			i.bookmark:hover,i.bookmark.highlight{
-				background:url("<?php echo home_url();?>/wp-content/uploads/2020/03/bookmark-hover.png");
-				width:16px;
-				background-size: cover;
-				background-repeat: no-repeat;
-				height: 18px;
-			}
-			.simplefavorite-button i.fa-bookmark-icon{
-				background:url("<?php echo home_url();?>/wp-content/uploads/2020/03/bookmark-hover.png");
-				width:16px;
-				background-size: cover;
-				background-repeat: no-repeat;
-				height: 18px;
-				display:inline-block;
-			} 
-			.simplefavorite-button i.fa-bookmark-active{
-				background:url("<?php echo home_url();?>/wp-content/uploads/2020/03/bookmark-active.png");
-				width:16px;
-				background-size: cover;
-				background-repeat: no-repeat;
-				height: 18px;
-				display:inline-block;
-			} 
-			.bookmark-wrap.menu-item-has-children>a:before {
-				content: '';
-				display: block;
-				position: absolute;
-				bottom: 7px;
-				left: 4px;
-				width: 15px;
-				height: 15px;
-				background: #fff;
-				border-right: 1px solid #e7e9ec;
-				border-bottom: 1px solid #e7e9ec;
-				-webkit-transform: rotate(-135deg);
-				-ms-transform: rotate(-135deg);
-				transform: rotate(-135deg);
-				opacity: 0;
-				visibility: hidden;
-			}
-			.bookmark-wrap.menu-item-has-children.selected>a:before {
-				opacity: 1;
-				visibility: visible;
-				z-index: 1002;
-			}
-			.bookmark-dropdown {
-				background: #fff;
-				border: 1px solid #e7e9ec;
-				box-shadow: 0 2px 7px 1px rgba(0,0,0,.05), 0 6px 32px 0 rgba(18,43,70,0.1);
-				border-radius: 4px;
-				list-style: none;
-				position: absolute;
-				right: -15px;
-				top: -webkit-calc(100% - 15px);
-				top: calc(100% - 15px);
-				margin: 0;
-				min-width: 430px;
-				overflow: hidden;
-				opacity: 0;
-				visibility: hidden;
-				z-index: 1001;
-			}
-			.menu-item-has-children.selected .bookmark-dropdown {
-				opacity: 1;
-				visibility: visible;
-			}
-			.header-bookmark-link i{
-              font-size:18px;
-            }
-			.header-bookmark-link.current i{
-					color:rgb(83, 201, 0)!important;
-			}
-			.fav-light-box .favorites-list{
-				margin:0px;
-			}
-			.fav-light-box ul.favorites-list:nth-child(2){
-				display:none;
-			}
-			.fav-light-box .favlist{
-				padding:5px 10px;
-				border: none;
-				position: relative;
-			}
-			.fav-light-box .favlist:nth-child(odd){
-				background-color:#f6f6f6;  
-			}
-			.fav-light-box .favlist img{
-				width:70px;
-				box-shadow: var(--site-shadow);
-				margin-top: 5px;
-				margin-bottom: 4px; 
-			}
-			.fav-light-box .favlist p{
-				margin:0;
-				font-size:14px;
-			}
-			.fav-light-box .favlist a{
-				/*font-size:16px;*/
-				font-size:15px;
-				font-weight: normal;
-				margin-top:5px;
-				margin-bottom:5px;
-				display:block;
-			}
-           /*BRUCE*/
-			.fav-light-box .favlist i{
-				margin-top: 2px;
-				margin-left: 2px;
-				font-size:18px;
-			}
-			
-			.fav-light-box button.simplefavorite-button,
-			.favlist button.simplefavorite-button{
-				border: none;
-				width: auto !important;
-				height: auto!important;
-				position: absolute;
-				left: 12px;
-				top: 5px;
-				opacity:1;	
-			}
-			.bkmark_template .favlist button.simplefavorite-button{
-				left: 3px;
-				top: 5px;
-			}
-			.bookmark-footer{
-				background-color:#f6f6f6; 
-				padding: 10px;
-				overflow: hidden;
-				border-top: 1px solid #e7e9ec;
-			}
 
-			.favmore{
-				float:left;
-				background-color:#53c900;
-				color: #fff;
-				border-radius: 100px;
-				/*width: 36%;*/
-				-webkit-transition: all linear .2s;
-				transition: all linear .2s;
-				font-size: 14px;
-				display: inline-block;
-				padding: 6px 22px;
-				line-height: 1.471;
-				text-align:center;
-			}
-			.favmore a,.favmore a:hover{
-				color: #fff;
-			}
-			.favorites-list li img{
-				width:70px;
-				box-shadow: 0px 0px 3px 2px #ccc;
-			}
-			.bkmark_template .favorites-list li{
-				display: inline-block;
-				line-height: 23px;
-				padding:10px 0px;	
-			}
-			.bkmark_template .favorites-list{
-				-moz-column-count: 4;
-				-moz-column-gap: 20px;
-				-webkit-column-count: 2;
-				-webkit-column-gap: 40px;
-				column-count: 2;
-				column-gap: 40px;
-			}
-			
-			.page-id-29003 .entry-header .entry-title{
-				font-size: 1rem;
-                line-height: 1;
-				text-transform: lowercase;
-			}  
-			.bkmark_template ul.favorites-list:nth-child(2){
-				    display:none;
-			}
-			.favorites-list{
-                 margin:0;
-			}
-			.favlist a{
-				font-weight: 700;
-			}
-			.favorites-list li{
-                  position:relative; 
-				  padding:5px 0px;	
-			}
-			.favorites-list .favlist p{
-				  margin:0px; 
-			  } 
-			/**************Light Box Button Design****************/
-			.bookmark-filter .filter-list{
-				list-style:none;
-				overflow: hidden;
-                margin: 0;
-			}
-			.bookmark-filter{
-				margin:10px;
-			}
-			.bookmark-filter .filter-list li{
-				float:left;
-				margin-right: 12px;
-			}
-			
-			.bookmark-filter .filter-list li button{
-		        color: #53c900;
-				border-color: #53c900;
-				/*padding: 4px 10px;*/
-				padding: 5px 16px;
-				background-color: #fff;
-			}
-			.bookmark-filter .filter-list li button.active{
-				color: #fff;
-				border-color: #53c900;
-				background-color: #53c900;
-			}
-			/***************Bookmark Main Page Button Design*******************/
-			.bookmark-page-filter .bookmark-page-filter-list{
-				list-style:none;
-				overflow: hidden;
-				margin: 0;
-			}
-			.bookmark-page-filter{
-				margin: 10px 0px;
-			}
-			.bookmark-page-filter .bookmark-page-filter-list li{
-				float:left;
-				margin-right: 15px;
-			}
-			.bookmark-page-filter .bookmark-page-filter-list li button{
-				color: #53c900;
-				border-color: #53c900;
-				padding: 6px 18px;
-				background-color: #fff;
-			}
-			.bookmark-page-filter .bookmark-page-filter-list li button.active{
-				color: #fff;
-				border-color: #53c900;
-				background-color: #53c900;
-			}
+/* Useful if using text too: */
 
-			/***************Bookmark Main Page mobile*******************/
-			@media (max-width: 640px){
-				.bkmark_template .favorites-list{
-					-moz-column-count: 1;
-					-moz-column-gap: 20px;
-					-webkit-column-count: 1; 
-					-webkit-column-gap: 0px; 
-					column-count: 1; 
-					column-gap: 0px; 
-				}
-				.bookmark-page-filter .bookmark-page-filter-list li {
-					margin-bottom: 10px;
-				}
-			}
+.simplefavorite-button .fa-bookmark,
+.simplefavorite-button .fa-bookmark-o {
+	/*margin-left: 2px;*/
+	/*filter: drop-shadow(0px 2px 2px rgba(0,0,0,0.4));*/
+	color: #53c900!important;
+}
+.simplefavorite-button i.fa-bookmark::before {
+	height: 18px;
+}
+/*Positioning for Light Box*/
+
+.bookmark-wrap {
+	display: inline-block;
+}
+.bookmark-link {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	height: 76px;
+}
+i.bookmark {
+	background: url("<?php echo home_url();?>/wp-content/uploads/2020/03/bookmark.png");
+	width: 16px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 18px;
+}
+i.bookmark:hover,
+i.bookmark.highlight {
+	background: url("<?php echo home_url();?>/wp-content/uploads/2020/03/bookmark-hover.png");
+	width: 16px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 18px;
+}
+.simplefavorite-button i.fa-bookmark-icon {
+	background: url("<?php echo home_url();?>/wp-content/uploads/2020/03/bookmark-hover.png");
+	width: 16px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 18px;
+	display: inline-block;
+}
+.simplefavorite-button i.fa-bookmark-active {
+	background: url("<?php echo home_url();?>/wp-content/uploads/2020/03/bookmark-active.png");
+	width: 16px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 18px;
+	display: inline-block;
+}
+.bookmark-wrap.menu-item-has-children>a:before {
+	content: '';
+	display: block;
+	position: absolute;
+	bottom: 7px;
+	left: 4px;
+	width: 15px;
+	height: 15px;
+	background: #fff;
+	border-right: 1px solid #e7e9ec;
+	border-bottom: 1px solid #e7e9ec;
+	-webkit-transform: rotate(-135deg);
+	-ms-transform: rotate(-135deg);
+	transform: rotate(-135deg);
+	opacity: 0;
+	visibility: hidden;
+}
+.bookmark-wrap.menu-item-has-children.selected>a:before {
+	opacity: 1;
+	visibility: visible;
+	z-index: 1002;
+}
+.bookmark-dropdown {
+	background: #fff;
+	border: 1px solid #e7e9ec;
+	box-shadow: 0 2px 7px 1px rgba(0, 0, 0, .05), 0 6px 32px 0 rgba(18, 43, 70, 0.1);
+	border-radius: 4px;
+	list-style: none;
+	position: absolute;
+	right: -15px;
+	top: -webkit-calc(100% - 15px);
+	top: calc(100% - 15px);
+	margin: 0;
+	min-width: 430px;
+	overflow: hidden;
+	opacity: 0;
+	visibility: hidden;
+	z-index: 1001;
+}
+.menu-item-has-children.selected .bookmark-dropdown {
+	opacity: 1;
+	visibility: visible;
+}
+.header-bookmark-link i {
+	font-size: 18px;
+}
+.header-bookmark-link.current i {
+	color: rgb(83, 201, 0)!important;
+}
+.fav-light-box .favorites-list {
+	margin: 0px;
+}
+.fav-light-box ul.favorites-list:nth-child(2) {
+	display: none;
+}
+.fav-light-box .favlist {
+	padding: 5px 10px;
+	border: none;
+	position: relative;
+}
+.fav-light-box .favlist:nth-child(odd) {
+	background-color: #f6f6f6;
+}
+.fav-light-box .favlist img {
+	width: 70px;
+	box-shadow: var(--site-shadow);
+	margin-top: 5px;
+	margin-bottom: 4px;
+}
+.fav-light-box .favlist p {
+	margin: 0;
+	font-size: 14px;
+}
+.fav-light-box .favlist a {
+	/*font-size:16px;*/
+	font-size: 15px;
+	font-weight: normal;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	display: block;
+}
+/*BRUCE*/
+
+.fav-light-box .favlist i {
+	margin-top: 2px;
+	margin-left: 2px;
+	font-size: 18px;
+}
+.fav-light-box button.simplefavorite-button,
+.favlist button.simplefavorite-button {
+	border: none;
+	width: auto !important;
+	height: auto!important;
+	position: absolute;
+	left: 12px;
+	top: 5px;
+	opacity: 1;
+}
+.bkmark_template .favlist button.simplefavorite-button {
+	left: 3px;
+	top: 5px;
+}
+.bookmark-footer {
+	background-color: #f6f6f6;
+	padding: 10px;
+	overflow: hidden;
+	border-top: 1px solid #e7e9ec;
+}
+.favmore {
+	float: left;
+	background-color: #53c900;
+	color: #fff;
+	border-radius: 100px;
+	/*width: 36%;*/
+	-webkit-transition: all linear .2s;
+	transition: all linear .2s;
+	font-size: 14px;
+	display: inline-block;
+	padding: 6px 22px;
+	line-height: 1.471;
+	text-align: center;
+}
+.favmore a,
+.favmore a:hover {
+	color: #fff;
+}
+.favorites-list li img {
+	width: 70px;
+	box-shadow: 0px 0px 3px 2px #ccc;
+}
+.bkmark_template .favorites-list li {
+	display: inline-block;
+	line-height: 23px;
+	padding: 10px 0px;
+}
+.bkmark_template .favorites-list {
+	-moz-column-count: 4;
+	-moz-column-gap: 20px;
+	-webkit-column-count: 2;
+	-webkit-column-gap: 40px;
+	column-count: 2;
+	column-gap: 40px;
+}
+.page-id-29003 .entry-header .entry-title {
+	font-size: 1rem;
+	line-height: 1;
+	text-transform: lowercase;
+}
+.bkmark_template ul.favorites-list:nth-child(2) {
+	display: none;
+}
+.favorites-list {
+	margin: 0;
+}
+.favlist a {
+	font-weight: 700;
+}
+.favorites-list li {
+	position: relative;
+	padding: 5px 0px;
+}
+.favorites-list .favlist p {
+	margin: 0px;
+}
+/**************Light Box Button Design****************/
+
+.bookmark-filter .filter-list {
+	list-style: none;
+	overflow: hidden;
+	margin: 0;
+}
+.bookmark-filter {
+	margin: 10px;
+}
+.bookmark-filter .filter-list li {
+	float: left;
+	margin-right: 12px;
+}
+.bookmark-filter .filter-list li button {
+	color: #53c900;
+	border-color: #53c900;
+	/*padding: 4px 10px;*/
+	padding: 5px 16px;
+	background-color: #fff;
+}
+.bookmark-filter .filter-list li button.active {
+	color: #fff;
+	border-color: #53c900;
+	background-color: #53c900;
+}
+/***************Bookmark Main Page Button Design*******************/
+
+.bookmark-page-filter .bookmark-page-filter-list {
+	list-style: none;
+	overflow: hidden;
+	margin: 0;
+}
+.bookmark-page-filter {
+	margin: 10px 0px;
+}
+.bookmark-page-filter .bookmark-page-filter-list li {
+	float: left;
+	margin-right: 15px;
+}
+.bookmark-page-filter .bookmark-page-filter-list li button {
+	color: #53c900;
+	border-color: #53c900;
+	padding: 6px 18px;
+	background-color: #fff;
+}
+.bookmark-page-filter .bookmark-page-filter-list li button.active {
+	color: #fff;
+	border-color: #53c900;
+	background-color: #53c900;
+}
+/***************Bookmark Main Page mobile*******************/
+
+@media (max-width: 640px) {
+	.bkmark_template .favorites-list {
+		-moz-column-count: 1;
+		-moz-column-gap: 20px;
+		-webkit-column-count: 1;
+		-webkit-column-gap: 0px;
+		column-count: 1;
+		column-gap: 0px;
+	}
+	.bookmark-page-filter .bookmark-page-filter-list li {
+		margin-bottom: 10px;
+	}
+}
