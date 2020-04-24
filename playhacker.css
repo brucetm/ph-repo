@@ -360,3 +360,83 @@ i.bookmark.highlight {
 		margin-bottom: 10px;
 	}
 }
+
+/*============Snippet- Menu main: highlight current menu section==============*/
+
+	/* BEG for main menu icons hover: **************************************/
+	/* Controls the BuddyBoss icons like search, cart, notifs: */
+	.site-header i:hover {
+		color: var(--site-accent-hex) !important;  
+	}
+	/* Lights up our main menu icon images on hover: */
+	.menu-item > a:hover > img {
+    	filter: drop-shadow(var(--site-accent-shadow)) !important;
+	}								
+	/* Lights up main menu links on hover: */
+	.menu-item > a:hover {
+		color: var(--site-accent-hex) !important;  
+	}								
+	/* END for main menu icons hover: **************************************/
+
+	/* IDEAS: .blog, .single-post are also valid */
+	.category-ideas .current-page-item > a > img,
+	.category-ideas .current_page_parent > a > img {
+    	filter: drop-shadow(var(--site-accent-shadow)) !important;
+	}
+	.category-ideas .current-page-item > a,
+	.category-ideas .current_page_parent > a {
+		color: var(--site-accent-hex) !important;  
+		font-weight: 400;
+	}
+
+	/* PROJECTS: */
+	.learndash-cpt .current-menu-item > a > img,
+	.learndash-cpt .menu-item-object-sfwd-courses > a > img {
+    	filter: drop-shadow(var(--site-accent-shadow)) !important;
+	}
+	.learndash-cpt .current-menu-item > a,
+	.learndash-cpt .menu-item-object-sfwd-courses > a {
+		color: var(--site-accent-hex) !important;  
+		font-weight: 400;
+	}
+
+	/* SHOP: */
+	.woocommerce-page .current_page_item > a > img,
+	.woocommerce-page .current_page_parent > a > img{
+    	filter: drop-shadow(var(--site-accent-shadow)) !important;
+	}
+	.woocommerce-page .current_page_item > a,
+	.woocommerce-page .current_page_parent > a {
+		color: var(--site-accent-hex) !important;  
+		font-weight: 400;
+	}
+
+	/* COMMUNITY: */
+	.groups .current_page_item > a > img {
+    	filter: drop-shadow(var(--site-accent-shadow)) !important;
+	}
+	.groups .current_page_item > a {
+		color: var(--site-accent-hex) !important;  
+		font-weight: 400;
+	}
+		
+	/* INFO: */
+	.category-info .current_page_item > a > img,
+	.category-info .current-page-ancestor > a > img {
+    	filter: drop-shadow(var(--site-accent-shadow)) !important;
+	}
+	.category-info .current_page_item > a,
+	.category-info .current-page-ancestor > a {
+		color: var(--site-accent-hex) !important;  
+		font-weight: 400;
+	}
+
+	/* PROFILE: */
+	.bbp-user-page .header-aside-inner .menu-item-has-children > a > img {
+    	filter: drop-shadow(var(--site-accent-shadow)) !important;
+	}
+	.bbp-user-page .header-aside-inner .menu-item-has-children > a,
+	.bbp-user-page .header-aside-inner .menu-item-has-children > a > i {
+		color: var(--site-accent-hex) !important;  
+		font-weight: 400;
+	}
