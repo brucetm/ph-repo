@@ -516,4 +516,38 @@ section.article-intro-box {
 		#subs-msg{
 		  color: #53c900;
 		  margin-bottom: 10px;
-		}		
+		}	
+/*============Snippet- Sign up form: styling=============*/			
+/*************Signup Page responsive**************/
+			@media (max-width: 767px){
+				.bs-bp-container-reg #buddypress #signup-form.standard-form .submit {
+					overflow:hidden;
+					text-align:center;
+				}
+			}
+			@media (max-width:1080px) and (min-width:768px){
+				.bs-bp-container-reg #buddypress #signup-form.standard-form .submit {
+					overflow:hidden;
+					text-align:center;
+					width:100%;
+				}
+			}
+			
+			/*************Signup Page Label**************/
+			.sigup-logo-subhdg{font-style:italic;font-size:font-size: 14px;}
+			.ph_signup_txt{text-transform:lowercase;}
+			#register-page form label{display:none;}
+			#register-page .extended-profile legend{display:none;}
+			.register-page .signup-form .field_accept-policies {
+				margin-bottom: -30px!important;
+			}
+			.register-privacy-info{
+				padding-left:30px;
+			}
+			.field_accept-policies .bp-checkbox-wrap .bs-styled-checkbox{
+				opacity:1;
+			}			
+			#register-page form input[type="submit"]:disabled {
+                  background: #c0c0c0!important;
+              }
+			body.buddypress.register .register-section-logo{margin-bottom:.6rem!important;}
