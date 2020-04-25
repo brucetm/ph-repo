@@ -498,3 +498,22 @@ section.article-intro-box {
 		elementor-social-icon-youtube:hover {
 			background-color: red !important;
 		}	
+/*==========Snippet- Newsletter page style==========*/
+/***********Custom Newsletter Design************/
+		.ph-newsletter 
+		.item-body-inner{
+			padding: 30px;
+			background: #fff;
+			border: 1px solid #e7e9ec;
+			border-radius: 4px;
+			margin-bottom: 30px;
+		}				
+        .ph-newsletter 
+		.item-body-inner h2{
+			font-size: 24px;
+            margin-bottom: 1rem!important;
+		}
+		#subs-msg{
+		  color: #53c900;
+		  margin-bottom: 10px;
+		}		
