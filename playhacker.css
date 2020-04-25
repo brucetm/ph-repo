@@ -476,4 +476,13 @@ section.article-intro-box {
 		background-color: rgba(0, 0, 0, 0.04);
 		margin-bottom: 20px !important;
 	}
+/*==========Snippet-Elementor:  project and article text widget styling========*/
 
+.article-text-block :last-child {
+	  	/*margin-bottom: -20px;*/
+		margin-bottom: 5px !important;
+	}
+		
+	h2.elementor-heading-title {
+		margin-top: 30px !important;
+	}
