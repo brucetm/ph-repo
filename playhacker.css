@@ -603,4 +603,11 @@ section.article-intro-box {
 	.elementor-widget-image-comparison .elementor-widget-container {
 		overflow: visible;
 	}
-*/				
+*/	
+
+/*===============Menu main: correct buddyboss user profile name styling==============*/
+/***********main-nav header user-name******************/
+	.user-wrap.menu-item-has-children .user-name{
+    	font-size:inherit;
+    	font-weight:inherit;
+	}
