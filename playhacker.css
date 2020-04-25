@@ -552,3 +552,8 @@ section.article-intro-box {
                   background: #c0c0c0!important;
               }
 			body.buddypress.register .register-section-logo{margin-bottom:.6rem!important;}
+
+	/*==========Snippet- Elementor: heading widget line height adjust ============*/	
+	.elementor-widget-heading .elementor-heading-title{
+		line-height:1.4;
+	}	
