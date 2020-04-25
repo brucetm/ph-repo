@@ -1,35 +1,31 @@
 #will write all the snippet css header 
-/***********Snippet-Custom footer design************/
+/*===========Snippet-Theme: footer content style============*/
 
-.footer_section nav li {
-	margin-bottom: 0px!important;
-}
-.footer_section nav li a:hover {
-	line-height: inherit;
-}
-.bb-footer .area-1 {
-	margin: 0 auto;
-}
-/* Mobile positioning: */
+/***********Custom footer design************/
+	.footer_section nav li{
+		margin-bottom:0px!important;
+	}
+	.footer_section nav li a:hover{
+		line-height:inherit;
+	}
+	.bb-footer .area-1{
+		margin:0 auto; 
+	 }						
+    
+	/* Mobile positioning: */
+	@media (min-width: 768px) and (max-width:1024px){
+		.foter-logo-col-left{width:32%!important;}
+		.foter-logo-col-right{width:32%!important;}
+		.foter-logo-col-center{width:25%!important;}
+	}
+	
+	/* Adds a shadow to footer edge: */
+	.bb-footer { 
+		/*filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.25));*/
+		box-shadow: 0 -8px 12px rgba(0,0,0,0.05) !important;
+		z-index:1;
+	}
 
-@media (min-width: 768px) and (max-width: 1024px) {
-	.foter-logo-col-left {
-		width: 32%!important;
-	}
-	.foter-logo-col-right {
-		width: 32%!important;
-	}
-	.foter-logo-col-center {
-		width: 25%!important;
-	}
-}
-/* Adds a shadow to footer edge: */
-
-.bb-footer {
-	/*filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.25));*/
-	box-shadow: 0 -8px 12px rgba(0, 0, 0, 0.05) !important;
-	z-index: 1;
-}
 /*=======snippet- Bookmarks button styling=======*/
 /* Positioning for most everything: */
 
