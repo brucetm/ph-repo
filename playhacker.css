@@ -611,3 +611,13 @@ section.article-intro-box {
     	font-size:inherit;
     	font-weight:inherit;
 	}
+/*============Snippet- Elementor: theme page margins align==========*/
+.elementor-top-column .elementor-column-wrap.elementor-element-populated {
+		padding: 0 !important;
+	}
+/*									
+	.elementor-column.elementor-col-100 {
+		margin-left: -10px;
+		margin-right: -10px;
+	}
+*/		
