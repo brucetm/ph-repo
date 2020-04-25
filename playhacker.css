@@ -574,4 +574,33 @@ section.article-intro-box {
 				list-style:none;
 				margin: 0;
 			}
-			
+/*=============Snippet- Elementor:  project, article: image, compare widgets styling==========*/
+/* Add shadow to article images:
+	(also works with  UAE image compare but not needed because of other markup below): */
+	.article-image img {
+	  	box-shadow: var(--site-shadow);
+	}
+	
+	/* Add shadow to UAE image comparison widget: */
+	.uael-before-after-slider {
+	  	box-shadow: var(--site-shadow);
+	}
+	
+	/* Styles article image captions: */
+	.article-image figcaption {
+	  	font-style: italic;
+	  	font-size: 12px;
+	  	text-align: center;
+	}
+		
+	/* Insures no background behind image captions: */
+	.article-image figure{
+	  	background-color: transparent;
+	  	overflow: visible;
+	}
+	
+/* Didn't write down what this is for:
+	.elementor-widget-image-comparison .elementor-widget-container {
+		overflow: visible;
+	}
+*/				
