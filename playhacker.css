@@ -620,4 +620,69 @@ section.article-intro-box {
 		margin-left: -10px;
 		margin-right: -10px;
 	}
-*/		
+*/	
+
+/*=========Snippet- Ratings system=========*/
+/* Style the article page's PROPERTY A rating icon: */
+
+		/* Style the article page's PROPERTY B rating icon: */
+
+		/* Style the article page's PROPERTY C rating icon: */
+		
+		/* Insures fat strokes don't get cut off by SVG bounding boxes: */
+		#complexity-rating {
+			overflow: visible !important;
+		}
+
+		/* Style the project course grid box's complexity rating icon: */
+		.bb-course-cover .complexity-badge {
+			width: 45px;
+    		margin-left: 23px;
+    		margin-top: 12px;
+    		margin-bottom: -7px;
+			/*stroke: gray;*/
+			stroke-width: 6px;
+		}
+		/* Removes the top while space below the complexity icons on course grid to improve spacing: */
+		.bb-card-course-details {
+			padding-top: 12px !important;
+		}
+
+		/* Style the project start page's complexity rating SVG overall: */
+		.single-sfwd-courses .complexity-badge { 
+			width: 70px;
+			margin-bottom: 8px;
+			margin-left: 3px;
+			/*stroke: gray;*/
+			/*stroke-width: 10px;*/
+			filter: drop-shadow(var(--complexity-icon-shadow));
+		}
+
+		/* Starting style of all complexity badges: */
+		.complexity-badge { 
+			fill: var(--complexity-icon-fill-inactive);
+			stroke: var(--complexity-icon-stroke-inactive);
+			/*stroke-width: var(--complexity-icon-stroke-width-inactive);*/
+			paint-order: stroke fill;
+		}
+		
+		/* Styling for complexity rating 1: */
+		.complexity-badge.complexity-1 #complexity-rating #level-1 { 
+			fill: var(--complexity-icon-fill-active);
+			stroke: var(--complexity-icon-stroke-active);
+		}
+
+		/* Styling for complexity rating 2: */
+		.complexity-badge.complexity-2 #complexity-rating #level-1,
+		.complexity-badge.complexity-2 #complexity-rating #level-2 { 
+			fill: var(--complexity-icon-fill-active);
+			stroke: var(--complexity-icon-stroke-active);
+		}
+
+		/* Styling for complexity rating 3: */
+		.complexity-badge.complexity-3 #complexity-rating #level-1,
+		.complexity-badge.complexity-3 #complexity-rating #level-2,
+		.complexity-badge.complexity-3 #complexity-rating #level-3	{
+			fill: var(--complexity-icon-fill-active);
+			stroke: var(--complexity-icon-stroke-active);
+		}
