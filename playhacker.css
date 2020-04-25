@@ -557,3 +557,21 @@ section.article-intro-box {
 	.elementor-widget-heading .elementor-heading-title{
 		line-height:1.4;
 	}	
+
+	/*==========Snippet- Policies Page: styling==========*/
+	        .table_list li a{
+				font-size: 18px;
+				font-weight: 500;
+				line-height: 2em;
+				color: #4D5C6D;
+                padding-left: 6px;
+			}
+			.table_list{
+				font-size: 18px;
+				font-weight: 500;
+			}
+			ul.table_list,.list-style-ul{
+				list-style:none;
+				margin: 0;
+			}
+			
