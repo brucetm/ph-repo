@@ -486,3 +486,15 @@ section.article-intro-box {
 	h2.elementor-heading-title {
 		margin-top: 30px !important;
 	}
+/*=========Snippet- ELementor: social icons hover color=============*/
+/*		i.fab.fa-instagram:hover {
+*/		elementor-social-icon-instagram:hover {
+			background-color: magenta !important;			
+		}
+		
+/*		i.fab.fa-pinterest:hover,
+		i.fab.fa-youtube:hover {
+*/		elementor-social-icon-pinterest:hover,
+		elementor-social-icon-youtube:hover {
+			background-color: red !important;
+		}	
