@@ -467,6 +467,7 @@
 		.sec_menu_icon .elementor-icon-box-icon i {
 			font-size:30px;
 		 }
+		}
 /*=============Snippet-Elementor: article intro-box-section styling============*/
 section.article-intro-box {
 		border-style: solid;
@@ -476,4 +477,212 @@ section.article-intro-box {
 		background-color: rgba(0, 0, 0, 0.04);
 		margin-bottom: 20px !important;
 	}
+/*==========Snippet-Elementor:  project and article text widget styling========*/
 
+.article-text-block :last-child {
+	  	/*margin-bottom: -20px;*/
+		margin-bottom: 5px !important;
+	}
+		
+	h2.elementor-heading-title {
+		margin-top: 30px !important;
+	}
+/*=========Snippet- ELementor: social icons hover color=============*/
+/*		i.fab.fa-instagram:hover {
+*/		elementor-social-icon-instagram:hover {
+			background-color: magenta !important;			
+		}
+		
+/*		i.fab.fa-pinterest:hover,
+		i.fab.fa-youtube:hover {
+*/		elementor-social-icon-pinterest:hover,
+		elementor-social-icon-youtube:hover {
+			background-color: red !important;
+		}	
+/*==========Snippet- Newsletter page style==========*/
+/***********Custom Newsletter Design************/
+		.ph-newsletter 
+		.item-body-inner{
+			padding: 30px;
+			background: #fff;
+			border: 1px solid #e7e9ec;
+			border-radius: 4px;
+			margin-bottom: 30px;
+		}				
+        .ph-newsletter 
+		.item-body-inner h2{
+			font-size: 24px;
+            margin-bottom: 1rem!important;
+		}
+		#subs-msg{
+		  color: #53c900;
+		  margin-bottom: 10px;
+		}	
+/*============Snippet- Sign up form: styling=============*/			
+/*************Signup Page responsive**************/
+			@media (max-width: 767px){
+				.bs-bp-container-reg #buddypress #signup-form.standard-form .submit {
+					overflow:hidden;
+					text-align:center;
+				}
+			}
+			@media (max-width:1080px) and (min-width:768px){
+				.bs-bp-container-reg #buddypress #signup-form.standard-form .submit {
+					overflow:hidden;
+					text-align:center;
+					width:100%;
+				}
+			}
+			
+			/*************Signup Page Label**************/
+			.sigup-logo-subhdg{font-style:italic;font-size:font-size: 14px;}
+			.ph_signup_txt{text-transform:lowercase;}
+			#register-page form label{display:none;}
+			#register-page .extended-profile legend{display:none;}
+			.register-page .signup-form .field_accept-policies {
+				margin-bottom: -30px!important;
+			}
+			.register-privacy-info{
+				padding-left:30px;
+			}
+			.field_accept-policies .bp-checkbox-wrap .bs-styled-checkbox{
+				opacity:1;
+			}			
+			#register-page form input[type="submit"]:disabled {
+                  background: #c0c0c0!important;
+              }
+			body.buddypress.register .register-section-logo{margin-bottom:.6rem!important;}
+
+	/*==========Snippet- Elementor: heading widget line height adjust ============*/	
+	.elementor-widget-heading .elementor-heading-title{
+		line-height:1.4;
+	}	
+
+	/*==========Snippet- Policies Page: styling==========*/
+	        .table_list li a{
+				font-size: 18px;
+				font-weight: 500;
+				line-height: 2em;
+				color: #4D5C6D;
+                padding-left: 6px;
+			}
+			.table_list{
+				font-size: 18px;
+				font-weight: 500;
+			}
+			ul.table_list,.list-style-ul{
+				list-style:none;
+				margin: 0;
+			}
+/*=============Snippet- Elementor:  project, article: image, compare widgets styling==========*/
+/* Add shadow to article images:
+	(also works with  UAE image compare but not needed because of other markup below): */
+	.article-image img {
+	  	box-shadow: var(--site-shadow);
+	}
+	
+	/* Add shadow to UAE image comparison widget: */
+	.uael-before-after-slider {
+	  	box-shadow: var(--site-shadow);
+	}
+	
+	/* Styles article image captions: */
+	.article-image figcaption {
+	  	font-style: italic;
+	  	font-size: 12px;
+	  	text-align: center;
+	}
+		
+	/* Insures no background behind image captions: */
+	.article-image figure{
+	  	background-color: transparent;
+	  	overflow: visible;
+	}
+	
+/* Didn't write down what this is for:
+	.elementor-widget-image-comparison .elementor-widget-container {
+		overflow: visible;
+	}
+*/	
+
+/*===============Menu main: correct buddyboss user profile name styling==============*/
+/***********main-nav header user-name******************/
+	.user-wrap.menu-item-has-children .user-name{
+    	font-size:inherit;
+    	font-weight:inherit;
+	}
+/*============Snippet- Elementor: theme page margins align==========*/
+.elementor-top-column .elementor-column-wrap.elementor-element-populated {
+		padding: 0 !important;
+	}
+/*									
+	.elementor-column.elementor-col-100 {
+		margin-left: -10px;
+		margin-right: -10px;
+	}
+*/	
+
+/*=========Snippet- Ratings system=========*/
+/* Style the article page's PROPERTY A rating icon: */
+
+		/* Style the article page's PROPERTY B rating icon: */
+
+		/* Style the article page's PROPERTY C rating icon: */
+		
+		/* Insures fat strokes don't get cut off by SVG bounding boxes: */
+		#complexity-rating {
+			overflow: visible !important;
+		}
+
+		/* Style the project course grid box's complexity rating icon: */
+		.bb-course-cover .complexity-badge {
+			width: 45px;
+    		margin-left: 23px;
+    		margin-top: 12px;
+    		margin-bottom: -7px;
+			/*stroke: gray;*/
+			stroke-width: 6px;
+		}
+		/* Removes the top while space below the complexity icons on course grid to improve spacing: */
+		.bb-card-course-details {
+			padding-top: 12px !important;
+		}
+
+		/* Style the project start page's complexity rating SVG overall: */
+		.single-sfwd-courses .complexity-badge { 
+			width: 70px;
+			margin-bottom: 8px;
+			margin-left: 3px;
+			/*stroke: gray;*/
+			/*stroke-width: 10px;*/
+			filter: drop-shadow(var(--complexity-icon-shadow));
+		}
+
+		/* Starting style of all complexity badges: */
+		.complexity-badge { 
+			fill: var(--complexity-icon-fill-inactive);
+			stroke: var(--complexity-icon-stroke-inactive);
+			/*stroke-width: var(--complexity-icon-stroke-width-inactive);*/
+			paint-order: stroke fill;
+		}
+		
+		/* Styling for complexity rating 1: */
+		.complexity-badge.complexity-1 #complexity-rating #level-1 { 
+			fill: var(--complexity-icon-fill-active);
+			stroke: var(--complexity-icon-stroke-active);
+		}
+
+		/* Styling for complexity rating 2: */
+		.complexity-badge.complexity-2 #complexity-rating #level-1,
+		.complexity-badge.complexity-2 #complexity-rating #level-2 { 
+			fill: var(--complexity-icon-fill-active);
+			stroke: var(--complexity-icon-stroke-active);
+		}
+
+		/* Styling for complexity rating 3: */
+		.complexity-badge.complexity-3 #complexity-rating #level-1,
+		.complexity-badge.complexity-3 #complexity-rating #level-2,
+		.complexity-badge.complexity-3 #complexity-rating #level-3	{
+			fill: var(--complexity-icon-fill-active);
+			stroke: var(--complexity-icon-stroke-active);
+		}
