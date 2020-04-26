@@ -56,5 +56,24 @@ jQuery(document).ready( function($){
 	   });
 </script> 
 
+<script>
+	/**==================Snippet:- Bookmarks: Page filters ====================**/
+	   jQuery(document).ready( function($){ 
+		   $(".bookmark-page-filter-list li button").click(function(){
+			  var filter_val= $(this).val();
+			   $(".bookmark-page-filter-list li button").removeClass('active');
+			   $(this).addClass('active');
+			  jQuery.ajax({
+				 type : "post",
+				 url : "<?php echo site_url().'/wp-admin/admin-ajax.php' ?>",
+				 data : {action: "bookmark_page_favorite_list", filterdata : filter_val, nonce: "<?php echo wp_create_nonce("my_user_fav_nonce"); ?>"},
+				 success: function(response) {
+					$('.bkmark_template').html(response);
+				 }
+			  })   
+		   });
+	   });   
+   </script>	
+
 </body>
 </html>
