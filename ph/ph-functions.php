@@ -78,6 +78,7 @@ function ph_profile_bookmark_content() {
 } 
 
 /*========Snippets:- Bookmarks: light box filter=========*/
+
 add_action("wp_ajax_my_favorite_list", "my_favorite_list");
 add_action("wp_ajax_nopriv_my_favorite_list", "my_favorite_list");
 
