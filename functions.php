@@ -53,6 +53,7 @@ function buddyboss_theme_child_scripts_styles()
   // Javascript
   wp_enqueue_script( 'buddyboss-child-js', get_stylesheet_directory_uri().'/assets/js/custom.js' );
   wp_enqueue_script( 'playhacker-child-js', get_stylesheet_directory_uri().'/assets/js/playhacker.js' );
+  wp_enqueue_script( 'playhacker-footer-js', get_stylesheet_directory_uri().'/assets/js/playhacker-footer.js','','1.0',true );
 
 }
 add_action( 'wp_enqueue_scripts', 'buddyboss_theme_child_scripts_styles', 9999 );
