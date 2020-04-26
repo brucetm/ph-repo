@@ -76,4 +76,41 @@ function ph_profile_bookmark_content() {
   }
 	
 } 
+
+/*========Snippets:- Bookmarks: light box filter=========*/
+add_action("wp_ajax_my_favorite_list", "my_favorite_list");
+add_action("wp_ajax_nopriv_my_favorite_list", "my_favorite_list");
+
+function my_favorite_list() {
+
+   if ( !wp_verify_nonce( $_REQUEST['nonce'], "my_user_fav_nonce")) {
+     return false;
+   } 
+	$filterdata=$_POST['filterdata'];
+	if($filterdata=="all-categories"){
+		echo do_shortcode('[user_favorites include_links="true" include_thumbnails="true" include_buttons="true" thumbnail_size="thumbnail" include_excerpts="true" ]');
+	} elseif($filterdata=="think"){
+		$post_type='post';
+	} elseif($filterdata=="build"){
+		$post_type='sfwd-courses';
+	} elseif($filterdata=="buy"){
+		$post_type='product';
+	}  else{
+		echo do_shortcode('[user_favorites include_links="true" include_thumbnails="true" include_buttons="true" thumbnail_size="thumbnail" include_excerpts="true" ]');
+	}
+	
+	   $filters_data = array(
+	  'post_type' => array(
+		$post_type
+	  ),
+	  'status' => array(
+		'publish'
+	  )
+	);
+	the_user_favorites_list($user_id = null, $site_id = null, $include_links = true, $filters =  $filters_data, $include_button = true, $include_thumbnails = true, $thumbnail_size = 'thumbnail', $include_excerpt = true);
+	  
+   die();
+
+}
+
 ?>
