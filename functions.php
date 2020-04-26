@@ -62,16 +62,7 @@ add_action( 'wp_enqueue_scripts', 'buddyboss_theme_child_scripts_styles', 9999 )
 
 // Add your own custom functions here
  
-/**=======Snippet- Bookmark: add button to product page====*/
-
-//Add favorite button on single product page:
-add_action( 'woocommerce_after_add_to_cart_button', 'ph_favorite_before_add_to_cart_btn' );
- 
-function ph_favorite_before_add_to_cart_btn(){
-	echo '<p class="fav_btn">';
-	echo do_shortcode('[favorite_button]');
-	echo '</p>';
-}
+include_once( 'ph-functions.php' );
 
 
 ?>
