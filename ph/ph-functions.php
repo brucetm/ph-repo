@@ -149,6 +149,65 @@ function bookmark_page_favorite_list() {
    die();
 
 }
+
+/*===========Snippets:-Menu main: PHP to add category to every type of post page for menu and section styling=========*/
+function pn_body_class_add_categories( $classes ) {
  
+	// Enable this if we only want to place category classes on a single post page, not archives:
+	//if ( !is_single() )
+	//	return $classes;
+ 
+	// Get the categories that are assigned to this post
+	$post_categories = get_the_category();
+ 
+	// Loop over each category in the $categories array
+	foreach( $post_categories as $current_category ) {
+ 
+		// Add the current category's slug to the $body_classes array
+		$classes[] = 'category-' . $current_category->slug;
+ 
+	}
+ 
+	// Finally, return the $body_classes array
+	return $classes;
+}
+add_filter( 'body_class', 'pn_body_class_add_categories' );
+
+/*===========Snippets: Quickview customizations==================*/
+/* Add link to full product page, on Iconic quickview lightbox: */  
+function iconic_qv_shop_link(  $product_id, $post, $product ) {
+	if( ! empty( $_POST['variation_id'] ) ) {
+		$product = wc_get_product( $_POST['variation_id'] );
+	}
+	printf( '<a href="%s" class="iconic-shop-link">%s</a>', $product->get_permalink(), __( 'See more in shop...', 'iconic' ) );
+}
+add_action( 'jck_qv_summary', 'iconic_qv_shop_link', 100, 3 );
+
+/* Add link to full product page, on Barn2 quickview lightbox and product page: */
+/* (we are hooking into the woo product because for now, because we don't know how to hook into the barn2 quickview proper) */
+function barn2_qv_shop_link() { 
+	global $product;
+    $id = $product->get_id();
+	printf( '<a href="%s" class="barn2-shop-link">%s</a>', $product->get_permalink(), __( 'See more in shop...', 'barn2' ) );
+}; 
+add_action( 'woocommerce_share', 'barn2_qv_shop_link', 10, 0 );
+
+/*===========Snippet:Termly Cookie Consent Banner v1============*/
+ if ( !function_exists( 'bp_is_register_page' ) && !is_user_logged_in() && !bp_is_register_page()) { 
+add_action( 'wp_head', function () { ?>
+	<script>
+	  (function () {
+		var s = document.createElement('script');
+		s.type = 'text/javascript';
+		s.async = true;
+		s.src = 'https://app.termly.io/embed.min.js';
+		s.id = '5621db51-7ef0-425d-80ac-71deb1020ab8';
+		s.setAttribute("data-name", "termly-embed-banner");
+		var x = document.getElementsByTagName('script')[0];
+		x.parentNode.insertBefore(s, x);
+	  })();
+	</script>
+<?php } );
+}
 
 ?>
