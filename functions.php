@@ -53,6 +53,7 @@ function buddyboss_theme_child_scripts_styles()
   // Javascript
   wp_enqueue_script( 'buddyboss-child-js', get_stylesheet_directory_uri().'/assets/js/custom.js' );
   wp_enqueue_script( 'playhacker-child-js', get_stylesheet_directory_uri().'/assets/js/playhacker.js' );
+  wp_enqueue_script( 'playhacker-footer-js', get_stylesheet_directory_uri().'/assets/js/playhacker-footer.js','','1.0',true );
 
 }
 add_action( 'wp_enqueue_scripts', 'buddyboss_theme_child_scripts_styles', 9999 );
@@ -62,16 +63,7 @@ add_action( 'wp_enqueue_scripts', 'buddyboss_theme_child_scripts_styles', 9999 )
 
 // Add your own custom functions here
  
-/**=======Snippet- Bookmark: add button to product page====*/
-
-//Add favorite button on single product page:
-add_action( 'woocommerce_after_add_to_cart_button', 'ph_favorite_before_add_to_cart_btn' );
- 
-function ph_favorite_before_add_to_cart_btn(){
-	echo '<p class="fav_btn">';
-	echo do_shortcode('[favorite_button]');
-	echo '</p>';
-}
+include_once( 'ph/ph-functions.php' );
 
 
 ?>
