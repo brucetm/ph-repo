@@ -22,3 +22,4 @@
 				//$('.filter-list li button.triger_categories').trigger('click');
 				}, 1000);
 		});	 
+		

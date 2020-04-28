@@ -34,3 +34,17 @@ jQuery(document).ready(function($){
 			});
 		});
    
+   /*==========Snippet:-Course Grids (Learndash, BuddyBoss, Elementor) site styling==========*/
+    jQuery(document).ready(function(){
+			
+			//Add classes to course grid objects based on project state, for easier site styling:
+			jQuery(".ld-status.ld-status-progress.ld-primary-background:contains('Start project')").addClass("not-started");
+			jQuery(".ld-status.ld-status-progress.ld-primary-background:contains('In Progress')").addClass("in-progress");
+	});	
+
+ /*=====Snippets:-Site animations and glow=====*/
+    jQuery(document).ready(function(){
+			//Remove the tooltip on logo hover (actually, on every image hover):
+			jQuery("img").removeAttr("title");
+	});	
+ 

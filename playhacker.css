@@ -1001,3 +1001,463 @@ section.article-intro-box {
 	.bb-share-container a>* {
     	opacity: 1;
 	}
+
+	/*=============Snippet:-Account Settings=============*/
+	
+		#buddypress .bp-settings-container .bp-navs #shop-setting:before {
+		 	display:none;
+		}
+		#buddypress .bp-settings-container .bp-navs #shop-setting i {
+			font-size: 20px;
+			margin-right: 10px;
+		}
+		.main-navs.single-screen-navs #settings-personal-li{
+			display:block!important;	
+			width: auto!important;	
+		}
+		.main-navs.single-screen-navs  #forums-personal-li{
+			display:none;
+		}
+
+	/*=====Snippet:-Course Grids (Learndash, BuddyBoss, Elementor) site styling=====*/	
+	/* BEGIN Elementor posts grid customizations for projects: ***********************************/
+		.elementor-post__title a:hover {
+			color: var(--site-accent-hex) !important;
+		}
+
+		
+		
+		/* END Elementor posts grid customizations for projects: *************************************/
+
+		
+		/* BEGIN BuddyBoss course grid customizations (on archive page, in groups, etc): *************/
+		
+			/* Adjust the bottom margin of the project archive page's search filter form: */
+			#search-filter-form-29869 {
+				margin-bottom: -20px;
+			}
+
+			/* Hide the grid/list and bb filters above bb course grid on Projects Archive page: */
+			/*.ld-secondary-header .bb-secondary-list-tabs {
+				display: none !important;
+			}
+			*/
+
+			/* Hide just the grid filters part of the BB list filter on the projects archive page: */
+			.ld-secondary-header .bb-secondary-list-tabs .grid-filters {
+				display: none !important;
+			}
+		
+			/* 1. Set the color of the ribbon for NOT STARTED courses to site's secondary-accent color: */
+			/*.bb-course-cover .ld-status.ld-status-progress.ld-primary-background.not-started {*/
+			.ld-status.ld-status-progress.ld-primary-background.not-started {
+				/*background-color: var(--site-secondary-hex) !important;*/
+				background-color: var(--site-accent-hex) !important;
+			}
+			/* 2. Set the color of the ribbon for IN PROGRESS courses to site alert color: */
+			/*.bb-course-cover .ld-status.ld-status-progress.ld-primary-background.in-progress {*/
+			.ld-status.ld-status-progress.ld-primary-background.in-progress {
+				background-color: var(--site-alert-hex) !important;
+			}
+			/* 3. Set the color of the ribbon for COMPLETED courses to site accent color: */
+			/*.bb-course-cover .ld-status.ld-status-complete.ld-secondary-background {*/
+			.ld-status.ld-status-complete.ld-secondary-background {
+				/*background-color: var(--site-accent-hex) !important;*/
+				background-color: DarkGrey !important;
+			}
+	
+		/* END BuddyBoss course grid customizations (on archive page, in groups, etc): *************/
+	
+		/* BEGIN Learndash course grid shortcode customizations (currently on front page only): *************/
+			/* Note: we may use these in articles and projects, for example at end of project to show related projects */
+		
+			.page-id-25830 .bb-courses-directory {
+				display: none;
+			}
+			.home .bb-courses-directory {
+				display: none;
+			}
+			.bb-cover-list-item {
+				box-shadow: var(--site-shadow);		
+				transition: all 0.2s ease-in-out !important;
+			}
+			.bb-cover-list-item:hover {
+				box-shadow: var(--site-shadow-hover)!important;	
+				transform: scale(var(--hover-scale)); 
+			}
+		
+		/* END Learndash course grid shortcode customizations: *************/
+
+/*=====Snippet:-Section Search styling - archive horiz - select2 - DO NOT EDIT=====*/ 
+/* Injected SFP form styling ***************************************************/
+		.top-serch-filter{
+		  flex: 0 0 100%;
+		  margin-top:20px;	
+		}
+		.top-serch-filter form.searchandfilter{
+		  margin-bottom:20px;
+		}
+		.post-type-archive-product #primary #main .page-title{
+			display:none;
+		}
+		.post-type-archive-product #primary #primary{
+			padding-top:0px;
+		}
+		.bb-courses-header .bs-dir-search{
+			display:none;
+		}
+		#bb-courses-directory-form .bb-title{
+			display:none;
+		}
+		/*.disable-form .select2-container--default .select2-selection--single {
+		  background: #c8cbcf;
+			pointer-events: none;
+		}
+		*/
+		
+		/* All SEARCH DROPDOWNS setup *******************************************/
+		
+		/* Hide the raw HTML dropdown, so it doesn't show breifly before Select2 can render: */
+		#search-filter-form-29986 select.sf-input-select {
+			visibility: hidden;
+			margin: 0 4px;
+		}
+
+		/* The SFP form overall has a left margin, kill it: */ 
+		form#search-filter-form-29986 > ul {
+			margin-left: 0 !important;
+		}
+		
+		/* Make the select boxes have some spacing between them: */ 
+		form#search-filter-form-29986 ul li {
+			margin: 0 4px !important;
+		}
+		
+		
+		/* Master container should be minimally styled */
+		.select2-container { 
+			width: 146px !important;
+			min-width: 120px;
+			font-family: Roboto, Helvetica;
+			font-size: 14px;
+			text-align: center;
+			/*margin: 0 4px;*/
+		}
+
+		/* This insures no blue line when focused: */
+		.select2-container *:focus {
+			outline:10px;
+		}
+
+		/* Main element bgnd, border, etc.: */
+		.select2-container--default .select2-selection--single {
+		  	border-radius: 17px; /* border radius shld be height/2 */
+		  	border: 0px;
+		  	height: 34px;
+			margin: 0;
+		}
+
+		/* Main element pre-selection text: */
+		.select2-container--default .select2-selection--single .select2-selection__placeholder {
+			padding-left: 10px;
+		}
+
+		/* Main element selected text: */
+		.select2-container--default .select2-selection--single .select2-selection__rendered{
+		  line-height:34px;
+		}
+
+		/* Selection-clear button (x): */
+		.select2-selection__clear {
+		  	font-size: 18px;
+			float: left !important;
+			margin-left: 4px;
+		  	top: 1px;
+		}
+
+		/* Down-pointing arrow (when selection not opened): */
+		.select2-container--default .select2-selection--single .select2-selection__arrow b
+		{
+		  margin-left: -14px;
+		  margin-top: 0;
+		  border-width: 5px;
+		}
+
+		/* Up-pointing arrow (open box): */
+		.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
+		  border-width: 5px;
+		  margin-top: -4px;
+		}
+
+		/* Contextually round some corners of the overall dropdown panel: */
+		span.select2-dropdown.select2-dropdown--below {
+    		border-radius: 0 0 4px 4px !important;
+		}
+		span.select2-dropdown.select2-dropdown--above {
+    		border-radius: 4px 4px 0 0 !important;
+		}
+
+		/* Contextually round some corners of the highlighted option: */
+		.select2-dropdown.select2-dropdown--below li.select2-results__option.select2-results__option--highlighted {
+    		border-radius: 0 0 4px 4px !important;
+		}
+		.select2-dropdown.select2-dropdown--below li.select2-results__option.select2-results__option--highlighted {
+    		border-radius: 0 0 4px 4px !important;
+		}
+				
+		/* Search box container: */
+		.select2-search {
+		  margin-top: 1px; /* Search box border */
+		}
+
+		/* Search box input field: */
+		.select2-search input {
+		  	height: 30px; /* Search box height */
+		}
+
+		/* This is opened-panel bgnd: */
+		.select2-container--open .select2-dropdown--below,
+		.select2-container--open .select2-dropdown--above {
+			padding: 0 !important;
+		}
+
+		/* Elements in the lists: */
+		li.select2-results__option {
+			padding: 2px 0 !important;
+		}
+
+		/* BEGIN COLOR SCHEMES *************************/
+		
+		/* Main element bgnd, border, etc.: */
+		.sf-field-taxonomy-ld_course_category .select2-container--default .select2-selection--single {
+		  	background: #53C900;
+		}
+		.sf-field-post-meta-complexity_level .select2-container--default .select2-selection--single {
+		  	background: #3399FF;
+		}
+		.sf-field-tag .select2-container--default .select2-selection--single {
+		  	background: #FF9900;
+		}
+
+		/* Container's pre-selection text: */
+		.select2-container--default .select2-selection--single .select2-selection__placeholder {
+			color: #FFFFFF;
+		}
+
+		/* Container's selected text: */
+		.select2-container--default .select2-selection--single .select2-selection__rendered{
+			color: #FFFFFF;
+		}
+
+		/* Selection-clear button (x): */
+		.select2-selection__clear {
+			color: #FFFFFF;
+		}
+
+		/* Down-pointing arrow (when selection not opened): */
+		.select2-container--default .select2-selection--single .select2-selection__arrow b
+		{
+			border-color: #fff transparent transparent transparent;
+		}
+
+		/* Up-pointing arrow (open box): */
+		.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
+			border-color: transparent transparent #fff transparent;
+		}
+
+		/* This is opened-panel bgnd: */
+		.select2-container--open .select2-dropdown--below,
+		.select2-container--open .select2-dropdown--above {
+			background: #CCCCCC !important;
+		}
+
+		/* Search box input field: */
+		.select2-search input {
+			background: #EEEEEE;
+		}
+
+		/*Selected or hovered element inside:*/
+		.select2-container--default .select2-results__option--highlighted[aria-selected]{
+			background: #AAAAAA !important;
+		}
+
+		/* Color of selected while hovering another: */
+		/*.select2-container--default .select2-results__option[aria-selected=true]{
+			background: #999999;
+			color: #fff;
+			opacity: 0.6;
+		}*/
+
+		
+		/* END COLOR SCHEMES ***************************/
+
+		/*
+		1. PAGE: Elementor page shortcode section search forms:
+		A. Articles search form on Elementor page: #search-filter-form-29893
+		B. Projects search form on Elementor page: #search-filter-form-29961
+		C. Shop search form on Elementor page: #search-filter-form-29958
+
+		2. SIDEBAR: Section archive sidebar widget search forms:
+		A. Articles search form in theme sidebar widget: #search-filter-form-30044
+		B. Projects search form in theme sidebar widget: #search-filter-form-29869
+		C. Shop search form in theme sidebar widget: #search-filter-form-30043
+		
+		3. TEMPLATE: Section archive template injection search forms:
+		A. Articles search form in theme horizontal insertion: #search-filter-form-29852
+		B. Projects search form in theme horizontal insertion: #search-filter-form-29986
+		C. Shop search form in theme horizontal insertion: #search-filter-form-29915
+
+		*/
+		
+		/* PAGE SETUP ******************************************************************************/
+
+		/* Removes the title Haider hid, so it doesn't take up space: */
+		form.bb-courses-directory > div.bb-courses-header {
+			display: none;
+		}
+
+		/* Project title and subtitle: */
+		.projects-header {
+			text-align: center;
+		}
+		.projects-title {
+			font-size: 22px;
+			margin-bottom: 4px;
+		}
+		.projects-subtitle {
+			font-style: italic;
+			font-size: 14px;
+			margin-bottom: 12px;
+		}
+		
+		/* Hide buddyboss' own learndash search filter dropdowns: */
+		.post-type-archive-sfwd-courses #subnav {
+			display: none;
+		}
+	
+		/* Remove top margin on Projects content area, to bring search form in tighter: */
+		.post-type-archive-sfwd-courses .content-area {
+			padding-top: 0 !important;
+		}
+		
+		/* Center the form and its contents on the page: */
+		#search-filter-form-29852,
+		#search-filter-form-29986,
+		#search-filter-form-29915 {
+			text-align: center;		
+		}
+		#search-filter-form-29986 li.sf-field-category,
+		#search-filter-form-29986 li.sf-field-taxonomy-ld_course_category,
+		#search-filter-form-29986 li.sf-field-post-meta-complexity_level,
+		#search-filter-form-29986 li.sf-field-tag {
+			display: inline;
+		}
+		
+	/*=====Snippet:-Site animations and glow=====*/	
+	/* BEGIN generic bounce routine ************************************************/
+		@keyframes bounce { 
+	  		0% { transform: translateY(0); }
+	  		100% { transform: translateY(-30px); }
+		}
+		.bouncing {
+	  		animation: bounce 0.6s;
+	  		animation-direction: alternate;
+	  		animation-iteration-count: infinite;
+		}
+		/* END generic bounce routine ************************************************/
+
+		
+		/* BEGIN Animate the 404 page: **********************************************/
+		.bb-img-404 img {
+			width: 500px;
+			animation: pulse 4s infinite;
+		}
+		.bb-img-404 img:hover {
+  			filter: drop-shadow(0 0 12px var(--site-accent-hex));
+			animation: pulse 4s infinite;
+		}
+		/* END Animate the 404 page: **********************************************/
+		
+		
+		/* BEG Code to make logo glow on home page only: ******************************/
+		.page-id-26002 .bb-logo, .bb-mobile-logo, .bs-cs-login-logo {
+  			filter: drop-shadow(0 0 6px rgba(83,201,0,0.9));
+		}
+		/* END Code to make logo glow on home page only: ******************************/
+
+		/******Note footer logo class is misspelled, don't correct it :) **************/
+
+		/* Begin header-logo wiggle+glow on hover: ************************************/
+		.bb-logo, .bb-mobile-logo, .bs-cs-login-logo  {
+  			filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.25));
+			transition: all 0.5s;
+		}
+		.bb-logo:hover, .bb-mobile-logo:hover, .bs-cs-login-logo:hover {
+  			filter: drop-shadow(0 0 6px rgba(83,201,0,0.9));
+  			animation: wiggle-header 500ms ease-in;
+		}
+
+		@keyframes wiggle-header {
+			0% {transform: rotate(3deg);}
+		  	25% {transform: rotate(-3deg);}
+			50% {transform: rotate(6deg);}
+			75% {transform: rotate(-1.5deg);}
+			100% {transform: rotate(0deg);}
+		}
+		/* END header wiggle and glow *************************************************/
+
+		/* BEG footer logo styling and glow+spin on hover ********************************************/
+		
+		/* Adds a black drop shadow to footer logo: */
+		.footer-loto, .logo-footer img { 
+			filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.25));
+			transition: all 0.6s;
+			animation: unwind 0.3s ease-out;
+		}
+
+		/* On hover, draw a site-accent green glow on footer logo: */
+		.logo-footer:hover img {
+			filter: drop-shadow(0 0 6px rgba(83,201,0,0.9));
+			animation: windup 1.15s ease-out;
+		}
+
+		/* On hover, rotate footer logo clockwise: */
+		@keyframes windup {
+		  0%   { transform: rotate(0deg); }
+		  100% { transform: rotate(360deg);}
+		}
+		/* On mouse out, footer logo counter-clockwise: */
+		@keyframes unwind {
+		  0%   { transform: rotate(360deg); }
+		  100% { transform: rotate(0deg); }
+		}
+		/* End footer glow+spin on hover **********************************************/
+
+	/*======Snippets:-Woo shop customizations======*/
+	/* Style the add to cart button: */
+		.woocommerce-page .single_add_to_cart_button {
+			border-radius: 25px !important;
+			text-transform: lowercase;
+			height: 36px !important;
+			padding: 0 16px;
+			font-family: "Roboto", Arial, sans-serif;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 14px !important;
+			color: #FFFFFF;
+			border-color: var(--site-accent-hex);
+		}			
+		
+		/* These position the qty selector so same height as add to cart button: */
+		.woocommerce-page .bs-quantity {
+			height: 36px !important;
+		}	
+		.woocommerce-page .bs-quantity input {
+		    height: 34px !important;
+		}
+		
+		.woocommerce-page .product form.cart .button {
+		    padding-left: 18px !important;
+    		padding-right: 18px !important;
+		}
+				

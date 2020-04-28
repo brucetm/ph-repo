@@ -192,6 +192,100 @@ function barn2_qv_shop_link() {
 }; 
 add_action( 'woocommerce_share', 'barn2_qv_shop_link', 10, 0 );
 
+/*==========Snippets:- Newsletter Subscription Function===========*/
+// Set up Cutsom BP navigation
+add_action( 'bp_member_options_nav', 'bp_email_preferences_links' );
+ 
+function bp_email_preferences_links() {
+	global $bp;
+    ?>
+<li><a href="<?php echo esc_url( bp_displayed_user_domain() . bp_get_settings_slug() . '/notifications' ); ?>">Email Preferences</a></li>
+<?php 
+}
+//Ajax call 'Newsletter Active-Campaign Ajax '
+
+function phnews_subscribe_function() {  
+   require_once(ABSPATH . "/ActiveCampaign/includes/ActiveCampaign.class.php");
+   $ac = new ActiveCampaign(ACTIVECAMPAIGN_URL, ACTIVECAMPAIGN_API_KEY);
+   
+	$profileUserID = bp_displayed_user_id();
+    $subscribe = $_POST['subscribe_status'];
+   //echo $subscribe; 
+	$subscribe_key_value = get_user_meta($profileUserID, 'ac_newsletter_subscribe', true);
+	if($subscribe_key_value){
+	 update_user_meta( $profileUserID, 'ac_newsletter_subscribe', $subscribe );
+	}else{
+	 add_user_meta( $profileUserID, 'ac_newsletter_subscribe', $subscribe);
+	}
+	//Get User Data
+	  $user_info = get_userdata($profileUserID);
+	  $user_email = $user_info->user_email;
+      $first_name = $user_info->first_name;
+      $last_name = $user_info->last_name;
+	//account view
+    $account = $ac->api("account/view");
+	
+	$list_id=1;//Active-campaign list Id
+	if($subscribe=='subscribed'){
+	
+		$contact = array(
+			"email"              => $user_email,
+			"first_name"         => $first_name,
+			"last_name"          => $last_name,
+			"p[{$list_id}]"      => $list_id,
+			"status[{$list_id}]" => 1, // "Active" status
+		);
+
+		$contact_sync = $ac->api("contact/sync", $contact);
+
+		if (!(int)$contact_sync->success) {
+			// request failed
+			echo "<p>Syncing contact failed. Error returned: " . $contact_sync->error . "</p>";
+			exit();
+		}
+
+			// successful request
+			$contact_id = (int)$contact_sync->subscriber_id;
+			//echo "<p>Contact subscribed successfully (ID {$contact_id})!</p>";
+		    echo 'Thank you for newsletter subscription';
+		 
+		
+    } else{
+		$contact = array(
+		"email"              => $user_email,
+		"p[{$list_id}]"      => $list_id,
+		"status[{$list_id}]" => 2, // "Active" status
+	);
+     
+	$contact_sync = $ac->api("contact/sync", $contact);
+
+	if (!(int)$contact_sync->success) {
+		// request failed
+		echo "<p>Syncing contact failed. Error returned: " . $contact_sync->error . "</p>";
+		exit();
+	}
+        
+        // successful request
+        $contact_id = (int)$contact_sync->subscriber_id;
+        //echo "<p>Contact unsubscribed successfully (ID {$contact_id})!</p>";
+		echo 'You have unsubscribed successfully';
+	}
+	
+    die();
+}
+
+add_action('wp_ajax_phnews_subscribe_function', 'phnews_subscribe_function'); 
+add_action('wp_ajax_nopriv_phnews_subscribe_function', 'phnews_subscribe_function');
+
+/*======Snippet:-Section Search styling - archive horiz - select2 - DO NOT EDIT======*/
+//Register the Select2 library components for use on our site:
+	function enqueue_select2() { 
+		wp_enqueue_script( 'select2-library', 'https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js' ); 
+		wp_enqueue_style( 'select2-stylesheet', 'https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css' ); 
+	}
+	add_action( 'wp_enqueue_scripts', 'enqueue_select2' );
+
+
 /*===========Snippet:Termly Cookie Consent Banner v1============*/
  if ( !function_exists( 'bp_is_register_page' ) && !is_user_logged_in() && !bp_is_register_page()) { 
 add_action( 'wp_head', function () { ?>
