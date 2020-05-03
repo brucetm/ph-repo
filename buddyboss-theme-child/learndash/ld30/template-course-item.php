@@ -45,6 +45,8 @@ $class = '';
 if ( ! empty( $course_price ) && ( $course_price_type == 'paynow' || $course_price_type == 'subscribe' || $course_price_type == 'closed' ) ) {
 	$class = 'bb-course-paid';
 }
+
+
 ?>
 
 <li class="bb-course-item-wrap">
@@ -75,8 +77,9 @@ if ( ! empty( $course_price ) && ( $course_price_type == 'paynow' || $course_pri
 						'</div>';
 
 					} else {
-
-						learndash_status_bubble( $status );
+                        //learndash_status_bubble( $status );
+                        //Copy the above fuction code from lerandash under the child functions and replace function name with bellow function name.
+						ph_learndash_status_bubble( $status );
 
 					}
 
