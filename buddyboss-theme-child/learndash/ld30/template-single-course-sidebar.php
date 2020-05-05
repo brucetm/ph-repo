@@ -114,11 +114,10 @@ if ( sfwd_lms_has_access( $course->ID, $current_user_id ) ) {
 
                         <div class="bb-course-status-content">
                         <?php if($status=='completed'){?>
-                        	<div class="ld-status ld-status-complete ld-secondary-background">Completed!</div>
-						<?php
-						   }else{
-						 learndash_status_bubble( $status ); 
-						   }
+                        	<div class="ld-status ld-status-complete ph-ld-primary-background">Completed!</div>
+                        <?php } ?>		
+                        <?php
+						    ph_landing_learndash_status_bubble( $status ); 
 						 ?>
                         </div><?php
 
@@ -148,7 +147,7 @@ if ( sfwd_lms_has_access( $course->ID, $current_user_id ) ) {
 						$resume_link       = buddyboss_theme()->learndash_helper()->boss_theme_course_resume( $course_id );
 					} elseif ( $course_progress == 100 ) {
 						$btn_advance_class = 'btn-advance-completed';
-						$btn_advance_label = __( 'Completed', 'buddyboss-theme' );
+						$btn_advance_label = __( 'completed', 'buddyboss-theme' );
 					} else {
 						$btn_advance_class = 'btn-advance-continue';
 						$btn_advance_label = __( 'Continue it!', 'buddyboss-theme' );

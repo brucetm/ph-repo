@@ -1563,8 +1563,8 @@ section.article-intro-box {
 		
 		/* 2. Info box: Project-start button color for enrolled but not yet started state: */
 		.learndash_join_button.btn-advance-start .btn-advance{
-			background-color: var(--site-secondary-hex);
-			/*background-color: var(--site-accent-hex);*/
+			/*background-color: var(--site-secondary-hex);*/
+			background-color: var(--site-accent-hex);
 		}
 
 		/* 3. Info box: Project-start button color for in-progress state: */
@@ -1597,10 +1597,27 @@ section.article-intro-box {
 		
 		/* 3. Info box on project start page: hide "in progress" lozenge bgnd */
 		.bb-course-preview-content .ld-status.ld-status-progress.ld-primary-background.in-progress{
-			background: 0 !important; 
+			background: none !important; 
 			font-weight: bold; 
 			font-style: italic;
-			color: var(--site-disabled-hex);
+			color: var(--site-disabled-hex)!important;
+		}
+		/*Haider ribbon style*/
+		
+		.learndash-wrapper .ph-ld-primary-background {
+		    background: none !important;
+		    font-weight: 400;
+		    font-style: italic;
+		    color: var(--site-disabled-hex)!important;
+		}
+		.learndash-wrapper .ld-status-complete.ph-ld-secondary-background{
+          background-color: var(--site-disabled-hex)!important;
+		}
+		.bb-cover-list-item .ph-ld-primary-background{
+			font-weight: 400;
+			font-style: italic;
+			color: #fbfbfc!important;
+			background-color: var(--site-alert-hex)!important;
 		}
 		
 		/************** END: Info box: Project-status lozenge: remove lozenge backround for each status: *************/
