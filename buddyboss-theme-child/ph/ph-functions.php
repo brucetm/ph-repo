@@ -363,13 +363,13 @@ function ph_learndash_status_bubble( $status = 'incomplete', $context = null, $e
 		case 'In Progress':
 		case 'progress':
 		case 'incomplete':
-			$bubble = '<div class="ld-status ld-status-progress ph-ld-primary-background">' . esc_html_x( 'In Progress!', 'In Progress item status', 'learndash' ) . '</div>';
+			$bubble = '<div class="ld-status ld-status-progress ph-ld-primary-background">' . esc_html_x( 'building it!', 'In Progress item status', 'learndash' ) . '</div>';
 			break;
 
 		case 'complete':
 		case 'completed':
 		case 'Completed':
-			$bubble = '<div class="ld-status ld-status-complete ph-ld-secondary-background">' . esc_html_x( 'Completed', 'In Progress item status', 'learndash' ) . '</div>';
+			$bubble = '<div class="ld-status ld-status-complete ph-ld-secondary-background">' . esc_html_x( 'finished it!', 'In Progress item status', 'learndash' ) . '</div>';
 			break;
 
 		case 'graded':

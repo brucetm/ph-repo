@@ -39,11 +39,19 @@ if ( sfwd_lms_has_access( $course->ID, $current_user_id ) ) {
 } else {
 	$is_enrolled = false;
 }
+
+/**Featured Course Class**/
+$featured_class='';
+$featrd_course = get_field( "set_project_as_featured_" ); 
+if($featrd_course){
+	$featured_class= 'lrd-featured-project';
+}
+
 ?>
 
 <div class="bb-single-course-sidebar bb-preview-wrap">
     <div class="bb-ld-sticky-sidebar">
-        <div class="widget bb-enroll-widget">
+        <div class="widget bb-enroll-widget <?php echo $featured_class;?>">
             <div class="bb-enroll-widget flex-1 push-right">
                 <div class="bb-course-preview-wrap bb-thumbnail-preview">
                     <div class="bb-preview-course-link-wrap">

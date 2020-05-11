@@ -1708,7 +1708,20 @@ section.article-intro-box {
 			font-size: small;
 			text-transform: uppercase !important;
 		}
-									
+		/* Lesson status badge style: 'completed' state: */
+        .bb-cover-list-item .ld-status.ph-ld-secondary-background{
+          background-color: var(--site-disabled-hex)!important;
+
+        }
+        /* Lesson status badge style: 'start' state: */
+        .bb-cover-list-item .ph-start-ld-primary-background{
+         background-color: #dbbe1a!important;
+        }
+        
+        /* Lesson status badge style: 'building this' state: */
+        .bb-cover-list-item .ph-free-ld-third-background{
+          background-color:var(--site-accent-hex) !important;
+        }
 		/* Lesson status badge: convert into text and style: 'completed' state: */
 		.bb-ld-status .ld-status.ld-status-complete.ld-secondary-background {
 			background-color: transparent !important;
@@ -1833,3 +1846,11 @@ section.article-intro-box {
 		}		
 
 		/* END Styling for all types **********************************************************/
+
+		/**Shop Page sidebar customization*/
+		.has-sidebar:not(.profile-sidebar):not(.group-sidebar):not(.llms-pointer) #primary.has-wc-sidebar{
+			max-width: 100%;
+		}
+		.has-sidebar:not(.profile-sidebar):not(.group-sidebar):not(.llms-pointer) #primary.has-wc-sidebar .content-area{
+			max-width: 100%;
+		}
