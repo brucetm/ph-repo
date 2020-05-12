@@ -1742,7 +1742,28 @@ section.article-intro-box {
 		.ld-progress-percentage.ld-secondary-color.course-completion-rate {
 			color: DarkGrey !important; /*DarkGrey is a medium grey, DimGrey is a dark grey */
 		}
-		
+
+		/* Fetured Course color:*/
+		.bb-cover-list-item .featured-project .featured-course-background{
+               background-color: #00ef12!important;
+		}
+
+		/* Featured Course color:*/
+		  .bb-single-course-sidebar .featured-course-background {
+		  	position: absolute;
+		    z-index: 9;
+		    top: 15px;
+		    background-color: #00ef12;
+		    border-radius: 0 15px 15px 0;
+		    color: #fff;
+		    text-align: center;
+		    padding: 5px 12px;
+		    text-transform: uppercase;
+		    font-size: 11px;
+		    line-height: 1;
+		    letter-spacing: .23px;
+		}
+
 		/* Lesson sidebar: hide members list below the course-steps list: */
 		.lms-course-members-list {
 			display: none;

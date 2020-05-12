@@ -44,7 +44,7 @@ if ( sfwd_lms_has_access( $course->ID, $current_user_id ) ) {
 $featured_class='';
 $featrd_course = get_field( "set_project_as_featured_" ); 
 if($featrd_course){
-	$featured_class= 'lrd-featured-project';
+	$featured_class= 'featured-project';
 }
 
 ?>
@@ -54,6 +54,7 @@ if($featrd_course){
         <div class="widget bb-enroll-widget <?php echo $featured_class;?>">
             <div class="bb-enroll-widget flex-1 push-right">
                 <div class="bb-course-preview-wrap bb-thumbnail-preview">
+
                     <div class="bb-preview-course-link-wrap">
                         <div class="thumbnail-container <?php echo $thumb_mode; ?>">
                             <div class="bb-course-video-overlay">
@@ -67,6 +68,16 @@ if($featrd_course){
 							if ( has_post_thumbnail() ) {
 								the_post_thumbnail();
 							}
+							?>
+							<?php 
+							/*
+                               //check Featured course
+								if($featured_class!=""){
+			                      echo '<div class="featured-course-background">' .
+									__( 'Featured! ', 'buddyboss-theme' ) .
+										'</div>';
+			                    }
+			                  */  
 							?>
                         </div>
                     </div>
