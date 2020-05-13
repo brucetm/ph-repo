@@ -146,8 +146,8 @@ if($featrd_course){
 						echo '<div class="ld-status ld-status-incomplete ld-third-background">' . __( 'not building', 'buddyboss-theme' ) . '</div>';
 						echo '</div>';
 
-					} elseif ( $course_pricing['type'] !== 'open' ) {
-
+					} elseif ( $course_pricing['type'] !== 'open' || !is_user_logged_in()) {
+                        //Haider modified code check login condition above
 						echo '<div class="bb-course-status-content">';
 						echo '<div class="ld-status ld-status-incomplete ld-third-background">' . __( 'not signed in', 'buddyboss-theme' ) . '</div>';
 						echo '</div>';
@@ -158,11 +158,17 @@ if($featrd_course){
 
                 <div class="bb-button-wrap">
 					<?php
-					$resume_link = '';
+					//Haider Modified code copy from bellow line
+                     $login_model = LearnDash_Settings_Section::get_section_setting( 'LearnDash_Settings_Theme_LD30', 'login_mode_enabled' );
+					$login_url   = apply_filters( 'learndash_login_url', ( $login_model === 'yes' ? '#login' : wp_login_url( get_the_permalink( $course_id ) ) ) );
 
+					$resume_link = '';
+					// Haider modified code add the login condition 
+                   if(is_user_logged_in()){
 					if ( empty( $course_progress ) && $course_progress < 100 ) {
+						//Haider change the btn label text
 						$btn_advance_class = 'btn-advance-start';
-						$btn_advance_label = sprintf( __( 'Start %s', 'buddyboss-theme' ), LearnDash_Custom_Label::get_label( 'course' ) );
+						$btn_advance_label = __( 'build it!', 'buddyboss-theme' );
 						$resume_link       = buddyboss_theme()->learndash_helper()->boss_theme_course_resume( $course_id );
 					} elseif ( $course_progress == 100 ) {
 						$btn_advance_class = 'btn-advance-completed';
@@ -172,9 +178,12 @@ if($featrd_course){
 						$btn_advance_label = __( 'Continue it!', 'buddyboss-theme' );
 						$resume_link       = buddyboss_theme()->learndash_helper()->boss_theme_course_resume( $course_id );
 					}
-
-					$login_model = LearnDash_Settings_Section::get_section_setting( 'LearnDash_Settings_Theme_LD30', 'login_mode_enabled' );
-					$login_url   = apply_filters( 'learndash_login_url', ( $login_model === 'yes' ? '#login' : wp_login_url( get_the_permalink( $course_id ) ) ) );
+                     } else{
+                        $btn_advance_class = 'learndash_join_button';
+						$btn_advance_label = __( 'sign in to track progress!', 'buddyboss-theme' );
+						$resume_link       = $login_url; 
+                     }
+					
 
 					if ( $course_price_type == 'open' || $course_price_type == 'free' ) {
 						if ( apply_filters( 'learndash_login_modal', true, $course_id, $current_user_id ) && ! is_user_logged_in() && $course_price_type != 'open' ):
