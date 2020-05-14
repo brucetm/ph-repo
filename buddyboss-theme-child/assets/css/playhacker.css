@@ -1563,8 +1563,8 @@ section.article-intro-box {
 		
 		/* 2. Info box: Project-start button color for enrolled but not yet started state: */
 		.learndash_join_button.btn-advance-start .btn-advance{
-			background-color: var(--site-secondary-hex);
-			/*background-color: var(--site-accent-hex);*/
+			/*background-color: var(--site-secondary-hex);*/
+			background-color: var(--site-accent-hex);
 		}
 
 		/* 3. Info box: Project-start button color for in-progress state: */
@@ -1597,10 +1597,27 @@ section.article-intro-box {
 		
 		/* 3. Info box on project start page: hide "in progress" lozenge bgnd */
 		.bb-course-preview-content .ld-status.ld-status-progress.ld-primary-background.in-progress{
-			background: 0 !important; 
+			background: none !important; 
 			font-weight: bold; 
 			font-style: italic;
-			color: var(--site-disabled-hex);
+			color: var(--site-disabled-hex)!important;
+		}
+		/*Haider ribbon style*/
+		
+		.learndash-wrapper .ph-ld-primary-background {
+		    background: none !important;
+		    font-weight: 400;
+		    font-style: italic;
+		    color: var(--site-disabled-hex)!important;
+		}
+		.learndash-wrapper .ld-status-complete.ph-ld-secondary-background{
+          background-color: var(--site-disabled-hex)!important;
+		}
+		.bb-cover-list-item .ph-ld-primary-background{
+			font-weight: 400;
+			font-style: italic;
+			color: #fbfbfc!important;
+			background-color: var(--site-alert-hex)!important;
 		}
 		
 		/************** END: Info box: Project-status lozenge: remove lozenge backround for each status: *************/
@@ -1691,7 +1708,20 @@ section.article-intro-box {
 			font-size: small;
 			text-transform: uppercase !important;
 		}
-									
+		/* Lesson status badge style: 'completed' state: */
+        .bb-cover-list-item .ld-status.ph-ld-secondary-background{
+          background-color: var(--site-disabled-hex)!important;
+
+        }
+        /* Lesson status badge style: 'start' state: */
+        .bb-cover-list-item .ph-start-ld-primary-background{
+         background-color: #dbbe1a!important;
+        }
+        
+        /* Lesson status badge style: 'building this' state: */
+        .bb-cover-list-item .ph-free-ld-third-background{
+          background-color:var(--site-accent-hex) !important;
+        }
 		/* Lesson status badge: convert into text and style: 'completed' state: */
 		.bb-ld-status .ld-status.ld-status-complete.ld-secondary-background {
 			background-color: transparent !important;
@@ -1712,7 +1742,28 @@ section.article-intro-box {
 		.ld-progress-percentage.ld-secondary-color.course-completion-rate {
 			color: DarkGrey !important; /*DarkGrey is a medium grey, DimGrey is a dark grey */
 		}
-		
+
+		/* Fetured Course color:*/
+		.bb-cover-list-item .featured-project .featured-course-background{
+               background-color: #00ef12!important;
+		}
+
+		/* Featured Course color:*/
+		  .bb-single-course-sidebar .featured-course-background {
+		  	position: absolute;
+		    z-index: 9;
+		    top: 15px;
+		    background-color: #00ef12;
+		    border-radius: 0 15px 15px 0;
+		    color: #fff;
+		    text-align: center;
+		    padding: 5px 12px;
+		    text-transform: uppercase;
+		    font-size: 11px;
+		    line-height: 1;
+		    letter-spacing: .23px;
+		}
+
 		/* Lesson sidebar: hide members list below the course-steps list: */
 		.lms-course-members-list {
 			display: none;
@@ -1816,3 +1867,11 @@ section.article-intro-box {
 		}		
 
 		/* END Styling for all types **********************************************************/
+
+		/**Shop Page sidebar customization*/
+		.has-sidebar:not(.profile-sidebar):not(.group-sidebar):not(.llms-pointer) #primary.has-wc-sidebar{
+			max-width: 100%;
+		}
+		.has-sidebar:not(.profile-sidebar):not(.group-sidebar):not(.llms-pointer) #primary.has-wc-sidebar .content-area{
+			max-width: 100%;
+		}

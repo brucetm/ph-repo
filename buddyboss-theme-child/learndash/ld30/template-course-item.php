@@ -45,12 +45,21 @@ $class = '';
 if ( ! empty( $course_price ) && ( $course_price_type == 'paynow' || $course_price_type == 'subscribe' || $course_price_type == 'closed' ) ) {
 	$class = 'bb-course-paid';
 }
+
+/**Featured Course Class**/
+$featured_class='';
+$featrd_course = get_field( "set_project_as_featured_" ); 
+if($featrd_course){
+	$featured_class= 'featured-project';
+}
+
+
 ?>
 
 <li class="bb-course-item-wrap">
 
     <div class="bb-cover-list-item <?php echo $class; ?>">
-        <div class="bb-course-cover lrd-complex">
+        <div class="bb-course-cover lrd-complex <?php echo $featured_class;?>">
             <a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>" class="bb-cover-wrap">
 				<?php
 				$progress = learndash_course_progress( array(
@@ -69,32 +78,47 @@ if ( ! empty( $course_price ) && ( $course_price_type == 'paynow' || $course_pri
 
 					if ( ( $course_pricing['type'] === 'open' && $progress['percentage'] === 0 ) || ( $course_pricing['type'] !== 'open' && $has_access && $progress['percentage'] === 0 ) ) {
 
-						echo '<div class="ld-status ld-status-progress ld-primary-background">' .
-							__( 'Start ', 'buddyboss-theme' ) .
-							sprintf( __( '%s', 'buddyboss-theme' ), LearnDash_Custom_Label::get_label( 'course' ) ) .
+						echo '<div class="ld-status ld-status-progress ph-start-ld-primary-background">' .
+							__( 'ready to build! ', 'buddyboss-theme' ) .
+							//sprintf( __( '%s', 'buddyboss-theme' ), LearnDash_Custom_Label::get_label( 'course' ) ) .
 						'</div>';
 
 					} else {
 
-						learndash_status_bubble( $status );
+                        //learndash_status_bubble( $status );
+                        //Copy the above fuction code from lerandash under the child functions and replace function name with bellow function name.
+						ph_learndash_status_bubble( $status );
 
 					}
 
 				} elseif ( $course_pricing['type'] == 'free' ) {
+					//check Featured course
+					if($featured_class!=""){
+                      echo '<div class="ld-status ld-status-progress featured-course-background">' .
+						__( 'Featured! ', 'buddyboss-theme' ) .
+							'</div>';
+                    } else {
 
-					echo '<div class="ld-status ld-status-incomplete ld-third-background">' . __( 'Free', 'buddyboss-theme' ) . '</div>';
+					echo '<div class="ld-status ld-status-incomplete ph-free-ld-third-background">' . __( 'build this!', 'buddyboss-theme' ) . '</div>';
+				    }
 
 				} elseif ( $course_pricing['type'] !== 'open' ) {
 
-					echo '<div class="ld-status ld-status-incomplete ld-third-background">' . __( 'Not Enrolled',
+					echo '<div class="ld-status ld-status-incomplete ph-ld-third-background">' . __( 'Not Enrolled',
 							'buddyboss-theme' ) . '</div>';
 
 				} elseif ( $course_pricing['type'] === 'open' ) {
-
-					echo '<div class="ld-status ld-status-progress ld-primary-background">' .
+					//check Featured course
+                    if($featured_class!=""){
+                      echo '<div class="ld-status ld-status-progress featured-course-background">' .
+						__( 'Featured! ', 'buddyboss-theme' ) .
+							'</div>';
+                    } else{
+					echo '<div class="ld-status ld-status-progress ph-ld-primary-background">' .
 						__( 'Start ', 'buddyboss-theme' ) .
 						sprintf( __( '%s', 'buddyboss-theme' ), LearnDash_Custom_Label::get_label( 'course' ) ) .
 					'</div>';
+					 }
 
 				}
 				?>

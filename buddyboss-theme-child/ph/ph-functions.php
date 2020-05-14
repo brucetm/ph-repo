@@ -313,4 +313,86 @@ add_action( 'wp_head', function () { ?>
 <?php } );
 }
 
+/*========Learn dash helper fuction copy for riboon status change ===========*/
+function ph_landing_learndash_status_bubble( $status = 'incomplete', $context = null, $echo = true ) {
+
+	$bubble = '';
+    
+	switch ( $status ) {
+		case 'In Progress':
+		case 'progress':
+		case 'incomplete':
+			$bubble = '<div class="ld-status ld-status-progress ph-ld-primary-background">' . esc_html_x( 'Building!', 'In Progress item status', 'learndash' ) . '</div>';
+			break;
+
+		case 'complete':
+		case 'completed':
+		case 'Completed':
+			$bubble = '<div class="ld-status ld-status-complete ph-ld-secondary-background">' . esc_html_x( 'you finished it!', 'In Progress item status', 'learndash' ) . '</div>';
+			break;
+
+		case 'graded':
+			$bubble = '<div class="ld-status ld-status-complete ph-ld-secondary-background">' . esc_html_x( 'Graded', 'In Progress item status', 'learndash' ) . '</div>';
+			break;
+
+		case 'not_graded':
+			$bubble = '<div class="ld-status ld-status-progress ph-ld-primary-background">' . esc_html_x( 'Not Graded', 'In Progress item status', 'learndash' ) . '</div>';
+			break;
+
+		case '':
+		default:
+			break;
+	}
+
+	$bubble = apply_filters( 'learndash_status_bubble', $bubble, $status );
+
+	if ( $echo ) {
+		echo wp_kses_post( $bubble );
+	} else {
+		return $bubble;
+	}
+
+}
+
+/*========Learn dash helper fuction copy for riboon status change ===========*/
+function ph_learndash_status_bubble( $status = 'incomplete', $context = null, $echo = true ) {
+
+	$bubble = '';
+    
+	switch ( $status ) {
+		case 'In Progress':
+		case 'progress':
+		case 'incomplete':
+			$bubble = '<div class="ld-status ld-status-progress ph-ld-primary-background">' . esc_html_x( 'building it!', 'In Progress item status', 'learndash' ) . '</div>';
+			break;
+
+		case 'complete':
+		case 'completed':
+		case 'Completed':
+			$bubble = '<div class="ld-status ld-status-complete ph-ld-secondary-background">' . esc_html_x( 'finished it!', 'In Progress item status', 'learndash' ) . '</div>';
+			break;
+
+		case 'graded':
+			$bubble = '<div class="ld-status ld-status-complete ph-ld-secondary-background">' . esc_html_x( 'Graded', 'In Progress item status', 'learndash' ) . '</div>';
+			break;
+
+		case 'not_graded':
+			$bubble = '<div class="ld-status ld-status-progress ph-ld-primary-background">' . esc_html_x( 'Not Graded', 'In Progress item status', 'learndash' ) . '</div>';
+			break;
+
+		case '':
+		default:
+			break;
+	}
+
+	$bubble = apply_filters( 'learndash_status_bubble', $bubble, $status );
+
+	if ( $echo ) {
+		echo wp_kses_post( $bubble );
+	} else {
+		return $bubble;
+	}
+
+}
+
 ?>
