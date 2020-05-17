@@ -69,22 +69,28 @@ if($featrd_course){
 								the_post_thumbnail();
 							}
 							?>
-							<?php 
-							/*
-                               //check Featured course
-								if($featured_class!=""){
-			                      echo '<div class="featured-course-background">' .
-									__( 'Featured! ', 'buddyboss-theme' ) .
-										'</div>';
-			                    }
-			                  */  
-							?>
                         </div>
+
+                        
                     </div>
                 </div>
             </div>
 
             <div class="bb-course-preview-content">
+            	<?php 
+							 //Achivement: Badge
+							$progress = learndash_course_progress( array(
+								'user_id'   => $current_user_id,
+								'course_id' => $course_id,
+								'array'     => true,
+							) );
+
+				             if($progress['percentage'] == 100){ ?>
+				             <div class="badge">
+				                <?php echo do_shortcode('[gamipress_achievement id="29750" title="no" link="no" thumbnail="yes" excerpt="no" times_earned="no" steps="no" toggle="no" earners="no" layout="right"]');?>
+				             </div>
+				<?php }?>
+
 				<?php if ( buddyboss_theme_get_option( 'learndash_course_participants', null, true ) && ! empty( $course_members ) ) { ?>
                     <div class="bb-course-member-wrap flex align-items-center">
                         <span class="bb-course-members"> <?php
@@ -128,6 +134,7 @@ if($featrd_course){
 					if ( $progress['percentage'] > 0 && $progress['percentage'] !== 100 ) {
 						$status = 'progress';
 					}
+                    
 
 					if ( is_user_logged_in() && isset( $has_access ) && $has_access ) { ?>
 
@@ -149,7 +156,7 @@ if($featrd_course){
 					} elseif ( $course_pricing['type'] !== 'open' || !is_user_logged_in()) {
                         //Haider modified code check login condition above
 						echo '<div class="bb-course-status-content">';
-						echo '<div class="ld-status ld-status-incomplete ld-third-background">' . __( 'not signed in', 'buddyboss-theme' ) . '</div>';
+						echo '<div class="ld-status ld-status-incomplete ld-third-background">' . __( 'sign up to track progress and make notes!', 'buddyboss-theme' ) . '</div>';
 						echo '</div>';
 
 					}
@@ -168,7 +175,7 @@ if($featrd_course){
 					if ( empty( $course_progress ) && $course_progress < 100 ) {
 						//Haider change the btn label text
 						$btn_advance_class = 'btn-advance-start';
-						$btn_advance_label = __( 'build it!', 'buddyboss-theme' );
+						$btn_advance_label = __( 'building it!', 'buddyboss-theme' );
 						$resume_link       = buddyboss_theme()->learndash_helper()->boss_theme_course_resume( $course_id );
 					} elseif ( $course_progress == 100 ) {
 						$btn_advance_class = 'btn-advance-completed';
@@ -180,7 +187,7 @@ if($featrd_course){
 					}
                      } else{
                         $btn_advance_class = 'learndash_join_button';
-						$btn_advance_label = __( 'sign in to track progress!', 'buddyboss-theme' );
+						$btn_advance_label = __( 'click to browse project!', 'buddyboss-theme' );
 						$resume_link       = $login_url; 
                      }
 					
@@ -190,11 +197,12 @@ if($featrd_course){
 							?>
                         <div class="learndash_join_button <?php echo $btn_advance_class; ?>">
                             <a href="<?php echo esc_url( $login_url ); ?>"
-                               class="btn-advance"><?php echo __( 'sign in to track progress!', 'buddyboss-theme' ); ?></a>
+                               class="btn-advance"><?php echo __( 'click to browse project!', 'buddyboss-theme' ); ?></a>
                             </div><?php
 						else:
 							if ( $course_price_type == 'free' && false === $is_enrolled ) {
-								$button_text = LearnDash_Custom_Label::get_label( 'button_take_this_course' );
+								//$button_text = LearnDash_Custom_Label::get_label( 'button_take_this_course' );
+								$button_text = __( 'building it!', 'buddyboss-theme' );
 								?>
                             <div class="learndash_join_button <?php echo $btn_advance_class; ?>">
                                 <form method="post">

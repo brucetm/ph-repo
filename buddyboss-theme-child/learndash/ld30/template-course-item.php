@@ -127,6 +127,13 @@ if($featrd_course){
 					the_post_thumbnail();
 				} ?>
             </a>
+            
+              <!--Bookmark: project grid-->
+            
+             <div class="proj_bookmark">
+             	 <?php echo do_shortcode('[favorite_button]');?>
+             </div>	
+            
 
             <!--BEG: complexity rating-->
 
@@ -147,6 +154,13 @@ if($featrd_course){
 			?>
 
 			<!--END: complexity rating-->
+
+			 <!--Achivement: Badge-->
+             <?php if($progress['percentage'] == 100){ ?>
+             <div class="badge">
+                <?php echo do_shortcode('[gamipress_achievement id="29750" title="no" link="no" thumbnail="yes" excerpt="no" times_earned="no" steps="no" toggle="no" earners="no" layout="right"]');?>
+             </div>
+              <?php } ?>
 		
 		</div>
 
