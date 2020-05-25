@@ -322,7 +322,7 @@ function ph_landing_learndash_status_bubble( $status = 'incomplete', $context = 
 		case 'In Progress':
 		case 'progress':
 		case 'incomplete':
-			$bubble = '<div class="ld-status ld-status-progress ph-ld-primary-background">' . esc_html_x( 'Building!', 'In Progress item status', 'learndash' ) . '</div>';
+			$bubble = '<div class="ld-status ld-status-progress ph-ld-primary-background">' . esc_html_x( 'building it!', 'In Progress item status', 'learndash' ) . '</div>';
 			break;
 
 		case 'complete':
@@ -394,5 +394,98 @@ function ph_learndash_status_bubble( $status = 'incomplete', $context = null, $e
 	}
 
 }
+
+
+    /*******Gamipress custom Events for Voting Systems*******/
+
+    function ph_prefix_custom_register_voting_triggers( $triggers ) {
+
+    // The array key will be the group label
+    $triggers['Ph Voting Events'] = array(
+        // Every event of this group is formed with:
+        // 'specific_event_that_will_be_triggered' => 'Event Label'
+        'ph_prefix_voting_system_event' => __( 'Like Custom Future Posts', 'gamipress' ),
+
+        // Also, you can add as many events as you want
+        // 'my_prefix_another_custom_specific_event' => __( 'Another custom specific event label', 'gamipress' ),
+        // 'my_prefix_super_custom_specific_event' => __( 'Super custom specific event label', 'gamipress' ),
+    );
+
+	    return $triggers;
+
+	}
+	add_filter( 'gamipress_activity_triggers', 'ph_prefix_custom_register_voting_triggers' );
+    
+
+    function ph_prefix_voting_triggers_for_a_future_custom_post( $specific_triggers ) {
+
+    // Set 'my_prefix_custom_specific_purchase_event' as specific event that requires the 'product' post type
+    $specific_triggers['ph_prefix_custom_voting_upVote_event'] = array( 'post','sfwd-courses');
+
+    return $specific_triggers;
+
+	}
+	add_filter( 'gamipress_specific_activity_triggers', 'ph_prefix_voting_triggers_for_a_future_custom_post' );
+
+    function ph_prefix_voting_label_for_like_a_post( $specific_trigger_labels ) {
+
+	    // %s will be replaced with the product title
+	    $specific_trigger_labels['ph_prefix_voting_system_event'] = __( 'Like the %s', 'gamipress' );
+
+	    // GamiPress automatically will use this pattern for auto-generate the requirement label
+	    // Some examples with "Purchase the %s product" label:
+	    // Step example using the product "T-shirt": Purchase the T-shirt product 2 times
+	    // Points award example using the product "CD Album": 10 points for purchase the CD Album product  5 times
+
+	    return $specific_trigger_labels;
+
+		}
+	add_filter( 'gamipress_specific_activity_trigger_label', 'ph_prefix_voting_label_for_like_a_post' );
+    
+
+    function my_prefix_custom_voting_listener( $args ) {
+
+    // Call to the gamipress_trigger_event() function to let know GamiPress this event was happened
+    // GamiPress will check if there is something to award automatically
+
+	    gamipress_trigger_event( array(
+	        // Mandatory data, the event triggered, the user ID to be awarded and specific ID
+	        'event' => 'ph_prefix_voting_system_event',
+	        'user_id' => get_current_user_id(),
+	        'post_id' => get_the_ID(),
+
+	        // Also, you can add any extra parameters you want
+	        // They will be passed too on any hook inside the GamiPress awards engine
+	        'date' => date( 'Y-m-d H:i:s' ),
+	        // 'custom_param' => 'custom_value',
+	    ) );
+
+	}
+	// The listener should be hooked to the desired action through the WordPress function add_action()
+	add_action( 'voting_system_action', 'my_prefix_custom_voting_listener' );
+   
+    /**
+	 * Define the action and give functionality to the action.
+	 */
+	 function voting_system_action() {
+	   do_action( 'voting_system_action',10,1);
+	 }
+	 
+	 /**
+	  * Register the action with WordPress.
+	  */
+	add_action( 'voting_system_action', 'voting_action_function' );
+	function voting_action_function() {
+		echo $_POST['vote_pid'];
+	    echo do_shortcode('[gamipress_points type="vote" thumbnail="yes" label="no" layout="left"]');
+	}
+   
+    add_action( 'wp_ajax_my_voting_request', 'voting_handle_ajax_request' );
+	  add_action( 'wp_ajax_nopriv_my_voting_request', 'voting_handle_ajax_request' );
+	  function voting_handle_ajax_request() {
+	    voting_system_action();
+	    exit;
+	  }
+   
 
 ?>

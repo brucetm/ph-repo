@@ -53,14 +53,24 @@ if($featrd_course){
 	$featured_class= 'featured-project';
 }
 
+/**Coming soon**/
+$coming_soon='';
+$coming_soon_course = get_field( "coming_soon" ); 
+if($coming_soon_course){
+	$coming_soon= 'lrd_coming_soon';
+}
 
 ?>
 
 <li class="bb-course-item-wrap">
 
-    <div class="bb-cover-list-item <?php echo $class; ?>">
+    <div class="bb-cover-list-item <?php echo $class.''.$coming_soon; ?>">
         <div class="bb-course-cover lrd-complex <?php echo $featured_class;?>">
             <a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>" class="bb-cover-wrap">
+            <?php if ( has_post_thumbnail() ) {
+					the_post_thumbnail();
+				} ?>
+            </a>	
 				<?php
 				$progress = learndash_course_progress( array(
 					'user_id'   => $current_user_id,
@@ -77,11 +87,16 @@ if($featrd_course){
 				if ( is_user_logged_in() && isset( $has_access ) && $has_access ) {
 
 					if ( ( $course_pricing['type'] === 'open' && $progress['percentage'] === 0 ) || ( $course_pricing['type'] !== 'open' && $has_access && $progress['percentage'] === 0 ) ) {
-
+                         if($coming_soon!=""){
+                         echo '<div class="ld-status ld-status-progress future-course-background">' .
+						__( 'Future! ', 'buddyboss-theme' ) .
+							'</div>';
+                        }else{
 						echo '<div class="ld-status ld-status-progress ph-start-ld-primary-background">' .
 							__( 'ready to build! ', 'buddyboss-theme' ) .
 							//sprintf( __( '%s', 'buddyboss-theme' ), LearnDash_Custom_Label::get_label( 'course' ) ) .
 						'</div>';
+					    }
 
 					} else {
 
@@ -93,9 +108,9 @@ if($featrd_course){
 
 				} elseif ( $course_pricing['type'] == 'free' ) {
 					//check Featured course
-					if($featured_class!=""){
-                      echo '<div class="ld-status ld-status-progress featured-course-background">' .
-						__( 'Featured! ', 'buddyboss-theme' ) .
+					if($coming_soon!=""){
+                      echo '<div class="ld-status ld-status-progress future-course-background">' .
+						__( 'Future! ', 'buddyboss-theme' ) .
 							'</div>';
                     } else {
 
@@ -109,9 +124,9 @@ if($featrd_course){
 
 				} elseif ( $course_pricing['type'] === 'open' ) {
 					//check Featured course
-                    if($featured_class!=""){
-                      echo '<div class="ld-status ld-status-progress featured-course-background">' .
-						__( 'Featured! ', 'buddyboss-theme' ) .
+                    if($coming_soon!=""){
+                      echo '<div class="ld-status ld-status-progress future-course-background">' .
+						__( 'Future! ', 'buddyboss-theme' ) .
 							'</div>';
                     } else{
 					echo '<div class="ld-status ld-status-progress ph-ld-primary-background">' .
@@ -122,12 +137,14 @@ if($featrd_course){
 
 				}
 				?>
-
-				<?php if ( has_post_thumbnail() ) {
-					the_post_thumbnail();
-				} ?>
-            </a>
-            
+				<!--Voting System-->
+           
+             <div class="voting-systems">
+             	 <button type="button" class="upVote" value="<?php echo get_the_ID();?>">upVote</button>
+			      <div class="like_<?php echo get_the_ID();?>"></div>	      	
+			      
+			</div>
+			
               <!--Bookmark: project grid-->
             
              <div class="proj_bookmark">
