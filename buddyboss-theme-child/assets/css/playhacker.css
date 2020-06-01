@@ -656,6 +656,7 @@ section.article-intro-box {
     		margin-bottom: -7px;
 			/*stroke: gray;*/
 			stroke-width: 6px;
+			float: left;
 		}
 		/* Removes the top while space below the complexity icons on course grid to improve spacing: */
 		.bb-card-course-details {
@@ -1716,11 +1717,13 @@ section.article-intro-box {
         /* Lesson status badge style: 'start' state: */
         .bb-cover-list-item .ph-start-ld-primary-background{
          background-color: #dbbe1a!important;
+         display: none;
         }
         
         /* Lesson status badge style: 'building this' state: */
         .bb-cover-list-item .ph-free-ld-third-background{
           background-color:var(--site-accent-hex) !important;
+          display:none;
         }
 		/* Lesson status badge: convert into text and style: 'completed' state: */
 		.bb-ld-status .ld-status.ld-status-complete.ld-secondary-background {
@@ -1875,3 +1878,34 @@ section.article-intro-box {
 		.has-sidebar:not(.profile-sidebar):not(.group-sidebar):not(.llms-pointer) #primary.has-wc-sidebar .content-area{
 			max-width: 100%;
 		}
+
+		/**Gamipress Badge for project grid**/
+        .badge{
+        	position: absolute;
+		    bottom: 35px;
+		    right: 0;
+        }
+        .badge .gamipress-achievement{
+          padding: 0;
+          border: 0;
+          margin: 0;
+        }
+        .badge .gamipress-achievement-description{
+          display: none;
+        }
+        .badge .gamipress-achievement-image{
+          width: 100%!important;
+          padding: 0!important;
+        }
+
+        /**Gamipress Badge for Single landing project page **/
+        .bb-single-course-sidebar .bb-course-preview-content{
+        	position: relative;
+        } 
+        .bb-single-course-sidebar .badge {
+		    position: absolute;
+		    top: -25px;
+		    right: 0;
+		    z-index: 1;
+		}  
+
