@@ -656,7 +656,6 @@ section.article-intro-box {
     		margin-bottom: -7px;
 			/*stroke: gray;*/
 			stroke-width: 6px;
-			float: left;
 		}
 		/* Removes the top while space below the complexity icons on course grid to improve spacing: */
 		.bb-card-course-details {
@@ -1159,168 +1158,176 @@ section.article-intro-box {
 		
 		/* All SEARCH DROPDOWNS setup *******************************************/
 		
-
-        /* Override theme's form bottom margin of 2rem: */
-		.top-search-filter form.searchandfilter {
-			/*margin-bottom: 20px;*/
-			margin-bottom: 1rem;
-		}
-		
-		/* Override theme's ul left margin: */
-		.top-search-filter form.searchandfilter ul{
-			margin-left: 0;
+		/* Hide the raw HTML dropdown, so it doesn't show breifly before Select2 can render: */
+		#search-filter-form-29986 select.sf-input-select {
+			visibility: hidden;
+			margin: 0 4px;
 		}
 
-		/* Woo archive's primary content area has a top margin, get rid of it */
-		.post-type-archive-product #main.site-main #primary.content-area {
-			padding-top: 0;
+		/* The SFP form overall has a left margin, kill it: */ 
+		form#search-filter-form-29986 > ul {
+			margin-left: 0 !important;
 		}
 		
-		/* Space below title: */
-		.top-search-filter .playhacker-title {
-			margin-bottom: 0.4rem;
+		/* Make the select boxes have some spacing between them: */ 
+		form#search-filter-form-29986 ul li {
+			margin: 0 4px !important;
 		}
 		
-		/* Space below short description: */
-		.top-search-filter .page-short-description {
-			margin-bottom: 1.5rem;
-		}
 		
-		/* Make the select boxes have some spacing between them,
-		and below them (so when they wrap on mobile): */ 
-		.top-search-filter form ul li {
-			margin: 0 0.7rem 0 0 !important;
+		/* Master container should be minimally styled */
+		.select2-container { 
+			width: 146px !important;
+			min-width: 120px;
+			font-family: Roboto, Helvetica;
+			font-size: 14px;
+			text-align: center;
+			/*margin: 0 4px;*/
 		}
 
-		/* Make the select boxes have some spacing below (for when they wrap on mobile): */ 
-		.top-search-filter form ul li label {
-			margin: 0 0 0.7rem 0;
+		/* This insures no blue line when focused: */
+		.select2-container *:focus {
+			outline:10px;
 		}
 
-		/* Make the selects lay alongside each other: */
-		.top-search-filter form li {
-			display: inline;
+		/* Main element bgnd, border, etc.: */
+		.select2-container--default .select2-selection--single {
+		  	border-radius: 17px; /* border radius shld be height/2 */
+		  	border: 0px;
+		  	height: 34px;
+			margin: 0;
 		}
 
-		/* Add a divider between form and page: */
-		.top-search-filter .bottom-rule {
-			padding: 0 10px 0 10px;
-			border-bottom: 1px solid #E0E0E0;
-		}
-		
-		/* Adjust spacing for each archive type: */
-		.blog .top-search-filter .bottom-rule {
-			margin-bottom: 1.5rem;
-		}
-		.post-type-archive-sfwd-courses .top-search-filter .bottom-rule {
-			margin-bottom: 1rem;
-		}
-		.post-type-archive-product .top-search-filter .bottom-rule {
-			margin-bottom: 0.3rem;
-		}
-		.post-type-archive-product .woocommerce-result-count {
-			margin-top: 0;
-		}
-		
-		/* Standardize the width of the selects and the search input boxes: */
-		.top-search-filter .searchandfilter select,
-		.top-search-filter .searchandfilter input {
- 			width: 160px; 
-			min-width: 160px;
-		}
-		
-		/* THINK: optimize size of selects and search input boxes: */
-		.blog .top-search-filter select,
-		.blog .top-search-filter input {
- 			width: 138px; 
-			min-width: 138px;
-			height: 32px;
-		}
-		/* THINK: adjust padding for best text visibility */
-		.blog .top-search-filter select {
-			background-position: right 10px top 50%;
-			padding: 0 24px 0 10px;
+		/* Main element pre-selection text: */
+		.select2-container--default .select2-selection--single .select2-selection__placeholder {
+			padding-left: 10px;
 		}
 
-		/* BUILD: width of the selects and search input boxes: */
-		.post-type-archive-sfwd-courses .top-search-filter select,
-		.post-type-archive-sfwd-courses .top-search-filter input {
- 			width: 138px; 
-			min-width: 138px;
-			height: 32px;
-		}
-		/* BUILD: adjust padding for best text visibility */
-		.post-type-archive-sfwd-courses .top-search-filter select {
-			background-position: right 10px top 50%;
-			padding: 0 24px 0 10px;
-		}
-		
-		/* BUY: width of the selects and search input boxes: */
-		.woocommerce-page .top-search-filter select,
-		.woocommerce-page .top-search-filter input {
- 			width: 134px; 
-			min-width: 134px;
-			height: 32px;
-		}
-		/* BUY: override width of department and project selects: */
-		.woocommerce-page .top-search-filter select[name="_sft_associated_projects[]"],
-		.woocommerce-page .top-search-filter select[name="_sft_product_cat[]"] {	
- 			width: 164px; 
-			min-width: 164px;
-		}
-		/* BUY: adjust padding for best text visibility */
-		.woocommerce-page .top-search-filter select {
-			background-position: right 10px top 50%;
-			padding: 0 24px 0 10px;
-		}
-		/* BUY: adjust padding inside dropdown for best text visibility */
-		.woocommerce-page .top-search-filter option {
-			padding-right: 5px !important;
-		}
-		
-		/* Shadow the search elements in theme style on hover: */		
-		.top-search-filter .searchandfilter select,
-		.top-search-filter .searchandfilter input.sf-input-text {
-			transition: filter 0.2s;
-			will-change: transform;
-		}
-		.top-search-filter .searchandfilter select:hover,
-		.top-search-filter .searchandfilter input.sf-input-text:hover {
-			filter: drop-shadow(var(--select-shadow-hover-accent));
-		}
-		
-		/* (Works with JQuery: select-change event adds/removes this class) */
-		/* Makes a select box with an option selected glow: */
-		/* Highlight the shop search box if have filtered by it: */
-		.top-search-filter .searchandfilter select.select-highlight,
-		.top-search-filter .searchandfilter .sf-field-search input.sf-input-text:not([value='']) {
-			filter: drop-shadow(var(--select-shadow-accent));	
+		/* Main element selected text: */
+		.select2-container--default .select2-selection--single .select2-selection__rendered{
+		  line-height:34px;
 		}
 
-		
-		/*Haider: Mobile SFP style*/
-		
-		@media (max-width: 640px){
-			.top-search-filter{
-				text-align:center;
-			}	
-			.top-search-filter .playhacker-title{
-				font-size:22px;
-			}
-			.post-grid .entry-title {
-               font-size: 1.25rem!important;
-			}
-			#main h1.page-title{
-				font-size:22px;
-			}
-			.subnav-search.groups-search{
-				    margin-top: 0px;
-			}
-			body.buddypress article.page>.entry-header .entry-title {
-				font-size: 22px;
-			}
+		/* Selection-clear button (x): */
+		.select2-selection__clear {
+		  	font-size: 18px;
+			float: left !important;
+			margin-left: 4px;
+		  	top: 1px;
 		}
+
+		/* Down-pointing arrow (when selection not opened): */
+		.select2-container--default .select2-selection--single .select2-selection__arrow b
+		{
+		  margin-left: -14px;
+		  margin-top: 0;
+		  border-width: 5px;
+		}
+
+		/* Up-pointing arrow (open box): */
+		.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
+		  border-width: 5px;
+		  margin-top: -4px;
+		}
+
+		/* Contextually round some corners of the overall dropdown panel: */
+		span.select2-dropdown.select2-dropdown--below {
+    		border-radius: 0 0 4px 4px !important;
+		}
+		span.select2-dropdown.select2-dropdown--above {
+    		border-radius: 4px 4px 0 0 !important;
+		}
+
+		/* Contextually round some corners of the highlighted option: */
+		.select2-dropdown.select2-dropdown--below li.select2-results__option.select2-results__option--highlighted {
+    		border-radius: 0 0 4px 4px !important;
+		}
+		.select2-dropdown.select2-dropdown--below li.select2-results__option.select2-results__option--highlighted {
+    		border-radius: 0 0 4px 4px !important;
+		}
+				
+		/* Search box container: */
+		.select2-search {
+		  margin-top: 1px; /* Search box border */
+		}
+
+		/* Search box input field: */
+		.select2-search input {
+		  	height: 30px; /* Search box height */
+		}
+
+		/* This is opened-panel bgnd: */
+		.select2-container--open .select2-dropdown--below,
+		.select2-container--open .select2-dropdown--above {
+			padding: 0 !important;
+		}
+
+		/* Elements in the lists: */
+		li.select2-results__option {
+			padding: 2px 0 !important;
+		}
+
+		/* BEGIN COLOR SCHEMES *************************/
 		
+		/* Main element bgnd, border, etc.: */
+		.sf-field-taxonomy-ld_course_category .select2-container--default .select2-selection--single {
+		  	background: #53C900;
+		}
+		.sf-field-post-meta-complexity_level .select2-container--default .select2-selection--single {
+		  	background: #3399FF;
+		}
+		.sf-field-tag .select2-container--default .select2-selection--single {
+		  	background: #FF9900;
+		}
+
+		/* Container's pre-selection text: */
+		.select2-container--default .select2-selection--single .select2-selection__placeholder {
+			color: #FFFFFF;
+		}
+
+		/* Container's selected text: */
+		.select2-container--default .select2-selection--single .select2-selection__rendered{
+			color: #FFFFFF;
+		}
+
+		/* Selection-clear button (x): */
+		.select2-selection__clear {
+			color: #FFFFFF;
+		}
+
+		/* Down-pointing arrow (when selection not opened): */
+		.select2-container--default .select2-selection--single .select2-selection__arrow b
+		{
+			border-color: #fff transparent transparent transparent;
+		}
+
+		/* Up-pointing arrow (open box): */
+		.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
+			border-color: transparent transparent #fff transparent;
+		}
+
+		/* This is opened-panel bgnd: */
+		.select2-container--open .select2-dropdown--below,
+		.select2-container--open .select2-dropdown--above {
+			background: #CCCCCC !important;
+		}
+
+		/* Search box input field: */
+		.select2-search input {
+			background: #EEEEEE;
+		}
+
+		/*Selected or hovered element inside:*/
+		.select2-container--default .select2-results__option--highlighted[aria-selected]{
+			background: #AAAAAA !important;
+		}
+
+		/* Color of selected while hovering another: */
+		/*.select2-container--default .select2-results__option[aria-selected=true]{
+			background: #999999;
+			color: #fff;
+			opacity: 0.6;
+		}*/
 
 		
 		/* END COLOR SCHEMES ***************************/
@@ -1590,27 +1597,10 @@ section.article-intro-box {
 		
 		/* 3. Info box on project start page: hide "in progress" lozenge bgnd */
 		.bb-course-preview-content .ld-status.ld-status-progress.ld-primary-background.in-progress{
-			background: none !important; 
+			background: 0 !important; 
 			font-weight: bold; 
 			font-style: italic;
-			color: var(--site-disabled-hex)!important;
-		}
-		/*Haider ribbon style*/
-		
-		.learndash-wrapper .ph-ld-primary-background {
-		    background: none !important;
-		    font-weight: 400;
-		    font-style: italic;
-		    color: var(--site-disabled-hex)!important;
-		}
-		.learndash-wrapper .ld-status-complete.ph-ld-secondary-background{
-          background-color: var(--site-disabled-hex)!important;
-		}
-		.bb-cover-list-item .ph-ld-primary-background{
-			font-weight: 400;
-			font-style: italic;
-			color: #fbfbfc!important;
-			background-color: var(--site-alert-hex)!important;
+			color: var(--site-disabled-hex);
 		}
 		
 		/************** END: Info box: Project-status lozenge: remove lozenge backround for each status: *************/
@@ -1701,22 +1691,7 @@ section.article-intro-box {
 			font-size: small;
 			text-transform: uppercase !important;
 		}
-		/* Lesson status badge style: 'completed' state: */
-        .bb-cover-list-item .ld-status.ph-ld-secondary-background{
-          background-color: var(--site-disabled-hex)!important;
-
-        }
-        /* Lesson status badge style: 'start' state: */
-        .bb-cover-list-item .ph-start-ld-primary-background{
-         background-color: #dbbe1a!important;
-         display: none;
-        }
-        
-        /* Lesson status badge style: 'building this' state: */
-        .bb-cover-list-item .ph-free-ld-third-background{
-          background-color:var(--site-accent-hex) !important;
-          display:none;
-        }
+									
 		/* Lesson status badge: convert into text and style: 'completed' state: */
 		.bb-ld-status .ld-status.ld-status-complete.ld-secondary-background {
 			background-color: transparent !important;
@@ -1737,28 +1712,7 @@ section.article-intro-box {
 		.ld-progress-percentage.ld-secondary-color.course-completion-rate {
 			color: DarkGrey !important; /*DarkGrey is a medium grey, DimGrey is a dark grey */
 		}
-
-		/* Fetured Course color:*/
-		.bb-cover-list-item .featured-project .featured-course-background{
-               background-color: #00ef12!important;
-		}
-
-		/* Featured Course color:*/
-		  .bb-single-course-sidebar .featured-course-background {
-		  	position: absolute;
-		    z-index: 9;
-		    top: 15px;
-		    background-color: #00ef12;
-		    border-radius: 0 15px 15px 0;
-		    color: #fff;
-		    text-align: center;
-		    padding: 5px 12px;
-		    text-transform: uppercase;
-		    font-size: 11px;
-		    line-height: 1;
-		    letter-spacing: .23px;
-		}
-
+		
 		/* Lesson sidebar: hide members list below the course-steps list: */
 		.lms-course-members-list {
 			display: none;
@@ -1862,278 +1816,3 @@ section.article-intro-box {
 		}		
 
 		/* END Styling for all types **********************************************************/
-
-		/**Shop Page sidebar customization*/
-		.has-sidebar:not(.profile-sidebar):not(.group-sidebar):not(.llms-pointer) #primary.has-wc-sidebar{
-			max-width: 100%;
-		}
-		.has-sidebar:not(.profile-sidebar):not(.group-sidebar):not(.llms-pointer) #primary.has-wc-sidebar .content-area{
-			max-width: 100%;
-		}
-
-		/**Gamipress Badge for project grid**/
-        .gamipress_badge{
-        	position: absolute;
-		    bottom: 35px;
-		    right: 0;
-        }
-        .gamipress_badge .gamipress-achievement{
-          padding: 0;
-          border: 0;
-          margin: 0;
-        }
-        .gamipress_badge .gamipress-achievement-description{
-          display: none;
-        }
-        .gamipress_badge .gamipress-achievement-image{
-          width: 100%!important;
-          padding: 0!important;
-        }
-
-        /**Gamipress Badge for Single landing project page **/
-        .bb-single-course-sidebar .bb-course-preview-content{
-        	position: relative;
-        } 
-        .bb-single-course-sidebar .gamipress_badge {
-		    position: absolute;
-		    top: -25px;
-		    right: 0;
-		    z-index: 1;
-		} 
-
-		/** Coming Soon **/
-        
-        .lrd_coming_soon .bb-cover-wrap,
-        .lrd_coming_soon .bb-cover-wrap img,
-        .lrd_coming_soon .bb-card-course-details{
-          filter: grayscale(1) opacity(0.5);
-
-        }
-        .lrd_coming_soon a.bb-cover-wrap,.lrd_coming_soon .bb-course-title{
-        	pointer-events: none;
-        }
-        .bb-cover-list-item.lrd_coming_soon .ld-status.future-course-background{
-           right: 0;
-		    top: 0;
-		    transform: translateX(30%) translateY(0%) rotate(45deg);
-		    transform-origin: top left;
-		    border-radius: 0;
-		    background: #ffeb00;
-            color: #000;
-        }
-        .ld-status.future-course-background:before,
-		.ld-status.future-course-background:after {
-		  content: '';
-		  position: absolute;
-		  top:0;
-		  margin: 0 -1px; /* tweak */
-		  width: 100%;
-		  height: 100%;
-		  background: #ffeb00;
-          
-		}
-		.ld-status.future-course-background:before {
-		  right:100%;
-		}
-
-		.ld-status.future-course-background:after {
-		  left:100%;
-		}
-        
-        .ph-future-post .ratio-wrap,
-        .ph-future-post .ratio-wrap img,
-        .ph-future-post .entry-content-wrap{
-          filter: grayscale(1) opacity(0.5);
-
-        }
-        .ph-future-post .ratio-wrap,.ph-future-post .entry-content-wrap{
-        	pointer-events: none;
-        }
-        .lrd_coming_soon .complexity-badge,.lrd_coming_soon .gamipress_badge{
-        	display: none;
-        } 
-         /****Bookmark Button style on Article grid****/
-         .type-post .post-inner-wrap {
-         	position: relative;
-         }
-        .post_bookmark.bookmark{
-        	position: absolute;
-        	right: 0;
-        	top:0;
-        }
-        .post_bookmark.bookmark button.simplefavorite-button{
-        	border: none;
-            height: auto!important;
-        }
-        .post_bookmark.bookmark .simplefavorite-button i {
-		    margin-top: 0px !important;
-		}
-		.ph-future-post .entry-meta{
-			display: none;
-		}
-		.ph-future-post .future-post{
-			position: absolute;
-			bottom: 35px;
-            left: 30px;
-		}
-        .ph-future-post .ld-status.future-post-background{
-            right: 0;
-		    top: 0;
-		    transform: translateX(30%) translateY(0%) rotate(45deg);
-		    transform-origin: top left;
-		    border-radius: 0;
-		    background: #ffeb00;
-            color: #000;
-            position: absolute;
-		    z-index: 9;
-		    text-align: center;
-		    padding: 5px 12px;
-		    text-transform: uppercase;
-		    font-size: 11px;
-		    line-height: 1;
-		    letter-spacing: .23px;
-        }
-        .ld-status.future-post-background:before,
-		.ld-status.future-post-background:after {
-		  content: '';
-		  position: absolute;
-		  top:0;
-		  margin: 0 -1px; /* tweak */
-		  width: 100%;
-		  height: 100%;
-		  background: #ffeb00;
-          
-		}
-		.ld-status.future-post-background:before {
-		  right:100%;
-		}
-
-		.ld-status.future-post-background:after {
-		  left:100%;
-		}
-		 /****Bookmark Button style on project grid****/
-		 .proj_bookmark.bookmark{
-        	position: absolute;
-        	right: 0;
-        	top:0;
-        }
-        .proj_bookmark.bookmark button.simplefavorite-button{
-        	border: none;
-            height: auto!important;
-        }
-        .proj_bookmark.bookmark button.simplefavorite-button:hover{
-              box-shadow: none;
-        }
-        .proj_bookmark.bookmark .simplefavorite-button i {
-		    margin-top: 0px !important;
-		}
-
-		.future-proj button.simplefavorite-button{
-			width: 75px !important;
-            height: 30px !important;
-            background-color: #fc5e5d!important;
-            border-color:#fc5e5d!important;
-            text-align: left;
-            padding-left: 10px!important;
-		}
-		.future-proj button.simplefavorite-button.active{
-			background-color: #87c74f!important;
-            border-color:#87c74f!important;
-            text-align: right;
-            padding-right: 10px!important;
-            color: #fff!important;
-		} 
-		.future-proj .simplefavorite-button i.fa-bookmark-icon{
-			background: url('/wp-content/uploads/2020/05/vote.png');
-			height: 30px;
-		    width: 30px;
-		    margin-top: 0!important;
-		}
-		.future-proj .simplefavorite-button i.fa-bookmark-active{
-			background: url('/wp-content/uploads/2020/05/vote.png');
-			height: 30px;
-		    width: 30px;
-		    margin-top: 0!important;
-		}
-
-		.future-post button.simplefavorite-button{
-			width: 75px !important;
-            height: 30px !important;
-            background-color: #fc5e5d!important;
-            border-color:#fc5e5d!important;
-            text-align: left;
-            padding-left: 10px!important;
-		}
-
-		.future-post button.simplefavorite-button.active{
-			background-color: #87c74f!important;
-            border-color:#87c74f!important;
-            text-align: right;
-            padding-right: 10px!important;
-                color: #fff!important;
-		} 
-		.future-proj{
-			height: 60px;
-			padding: 8px 10px;
-		}
-		.future-post button.simplefavorite-button::after{
-			content: "Sound Intresting! \A vote for development!";
-			position: absolute;
-            width: 176px;
-            left: 85px;
-            color: #fc5e5d;
-            white-space: pre-wrap;
-		}
-		.future-post button.simplefavorite-button.active::after{
-			content: "Sound Intresting! \A Upvoted for development!";
-			position: absolute;
-            width: 208px;
-		    left: 85px;
-		    text-align: left;
-		    color: #87c74f;
-		    white-space: pre-wrap;
-		}
-		.future-proj button.simplefavorite-button::after{
-			content: "Sound Intresting! \A vote for development!";
-			position: absolute;
-            width: 175px;
-            left: 85px;
-            color: #fc5e5d;
-            font-size: 15px;
-            white-space: pre-wrap;
-		}
-		.future-proj button.simplefavorite-button.active::after{
-			content: "Sound Intresting! \A Upvoted for development!";
-			position: absolute;
-            width: 176px;
-            left: 85px;
-            text-align: left;
-		    color: #87c74f;
-		    font-size: 15px;
-		    white-space: pre-wrap;
-		}
-		.future-post .simplefavorite-button i.fa-bookmark-icon{
-			background: url('/wp-content/uploads/2020/05/vote.png');
-			height: 30px;
-		    width: 30px;
-		    margin-top: 0!important;
-		}
-		.future-post .simplefavorite-button i.fa-bookmark-active{
-			background: url('/wp-content/uploads/2020/05/vote.png');
-			height: 30px;
-		    width: 30px;
-		    margin-top: 0!important;
-		}
-		.future-post .simplefavorite-button.active .simplefavorite-button-count,
-		.future-proj .simplefavorite-button.active .simplefavorite-button-count{
-			display: inline-block;
-            vertical-align: super;
-            float: left;
-		}
-		.simplefavorite-button .simplefavorite-button-count{
-			display: none;
-		}
-		.bookmark-dropdown{
-			height: 550px;
-			overflow-y: scroll;
-		}

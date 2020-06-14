@@ -48,5 +48,17 @@ jQuery(document).ready(function($){
 			jQuery("img").removeAttr("title");
 	});	
 
+   //Every time someone changes something on our top-search form, after it finishes updating the page:
+		//(See: https://support.searchandfilter.com/forums/topic/select2-orderby-not-displaying) */
+		jQuery(document).on("sf:ajaxfinish", ".searchandfilter", function(){
 
+			//Go through and update glow for each dropdown wih an option selected:
+			jQuery('.top-search-filter .searchandfilter option.sf-item-0').each(function() {
+				if(!jQuery(this).hasClass('sf-option-active')) {
+					jQuery(this).parent().addClass('select-highlight');
+					console.log('class added');
+				}
+			});	
+			
+		});
  

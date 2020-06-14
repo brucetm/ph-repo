@@ -58,6 +58,12 @@ function buddyboss_theme_child_scripts_styles()
 }
 add_action( 'wp_enqueue_scripts', 'buddyboss_theme_child_scripts_styles', 9999 );
 
+add_action( 'after_setup_theme', 'setup_woocommerce_support' );
+
+ function setup_woocommerce_support()
+{
+  add_theme_support('woocommerce');
+}
 
 /****************************** CUSTOM FUNCTIONS ******************************/
 

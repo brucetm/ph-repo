@@ -16,7 +16,7 @@ get_header();
 ?>
 
 <?php 
-    if ( is_active_sidebar( 'woo_sidebar' ) ) { 
+    if ( is_active_sidebar( 'woo_sidebar' ) && is_shop() ) { 
         $wc_side_bar = "has-wc-sidebar";
     } else {
         $wc_side_bar = "no-wc-sidebar";
@@ -43,8 +43,8 @@ get_header();
 
 	</main><!-- #main -->
 </div><!-- #primary -->
-
-<?php get_sidebar( 'woocommerce' ); ?>
-
+<?php if(!is_shop()){?>
+  <?php get_sidebar( 'woocommerce' ); ?>
+<?php }?>
 <?php
 get_footer();

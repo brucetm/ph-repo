@@ -228,23 +228,9 @@ jQuery(document).ready( function($){
     <!--Voting Systems-->
 	<script>
 		jQuery(document).ready(function($){
-			 $('.upVote').click(function(){
-                var pid=$(this).val();
-              //Ajax Call	
-        jQuery.ajax({           
-            url : "<?php echo site_url().'/wp-admin/admin-ajax.php' ?>",
-            type : 'post',
-            data : {
-                action : 'my_voting_request',
-                vote_pid : pid
-            },
-            success : function( response ) {
-                 //alert(response); 
-                 $(".like_"+pid).html(response);
-            }
-        }); 
-
-
+			 $('.simplefavorite-button').click(function(){
+                //alert('hello');
+              
 			 });
 
 			

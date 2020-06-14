@@ -145,7 +145,7 @@ if($coming_soon_course){
                   echo '<div class="proj_bookmark bookmark">';
                } ?>
                 <?php echo do_shortcode('[favorite_button]');?>
-                
+                <?php echo do_shortcode('[favorite_count]');?>
               </div>	
             
 

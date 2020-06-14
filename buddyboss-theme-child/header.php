@@ -29,7 +29,7 @@
 
 			<?php do_action( THEME_HOOK_PREFIX . 'before_header' ); ?>
 
-			<header id="masthead" class="<?php echo apply_filters( 'buddyboss_site_header_class', 'site-header' ); ?>">
+			<header id="masthead" class="<?php echo apply_filters( 'buddyboss_site_header_class', 'site-header site-header--bb' ); ?>">
 				<?php do_action( THEME_HOOK_PREFIX . 'header' ); ?>
 			</header>
 

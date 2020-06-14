@@ -10,12 +10,19 @@
 
 <?php 
 global $post;
+
+$future_post_class='';
+$coming_soon_course = get_field( "future-post" ); 
+if($coming_soon_course){
+	$future_post_class='ph-future-post';
+}
+
 ?>
 
-<article id="post-<?php the_ID(); ?> d" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<?php if ( !is_single() || is_related_posts() ) { ?>
-		<div class="post-inner-wrap">
+		<div class="post-inner-wrap <?php echo $future_post_class;?>">
 	<?php } ?>
 
 	<?php 
@@ -23,6 +30,8 @@ global $post;
 		buddyboss_theme_entry_header( $post );
 	} 
 	?>
+	 
+	         
 
 	<div class="entry-content-wrap">
 		<?php 
@@ -47,7 +56,7 @@ global $post;
 			?>
 
             <?php if (!is_singular('lesson') && !is_singular('llms_assignment') ) : ?>
-
+  
 			<header class="entry-header"><?php
 				if ( is_singular() && ! is_related_posts() ) :
 					the_title( '<h1 class="entry-title">', '</h1>' );
@@ -156,8 +165,23 @@ global $post;
 			</div><!-- .entry-content -->
 		<?php } ?>
 	</div>
-
+       
 	<?php if ( !is_single() || is_related_posts() ) { ?>
+		 <!--Bookmark: Article grid-->
+             <?php
+              if($coming_soon_course){   
+                echo '<div class="ld-status future-post-background">' .
+						__( 'future articles! ', 'buddyboss-theme' ) .
+							'</div>';
+
+                echo '<div class="future-post">';
+                } else { 	 
+                  echo '<div class="post_bookmark bookmark">';
+               } ?>
+                <?php echo do_shortcode('[favorite_button]');?>
+                 
+              </div> 
+           
 		</div><!--Close '.post-inner-wrap'-->
 	<?php } ?>
 
